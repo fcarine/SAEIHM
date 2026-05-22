@@ -1,0 +1,28 @@
+﻿<Page x:Class="SAEIHM.Menu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SAEIHM"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Menu">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnquitter" Margin="17,18,134,93"  Background="red" FontSize="20" FontWeight="Bold" Click="btnquitter_Click">Quitter</Button>
+        <TextBlock Margin="235,18,235,73" Grid.ColumnSpan="3" FontSize="30" Padding="38,5,0,0" FontWeight="Bold" Background="#FF288AC7" Foreground="White">MENU PRINCIPAL</TextBlock>
+        <Button x:Name="btnhisto" Margin="57,10,219,47" Grid.Row="1" Grid.Column="0" FontSize="22" Grid.ColumnSpan="2" Background="#FF288AC7" Foreground="White" FontWeight="Bold" Click="btnhisto_Click">HISTORIQUE DU SCORE</Button>
+        <Button x:Name="btnaide" Margin="216,10,60,47" Grid.Row="1" Grid.Column="1" FontSize="22" Grid.ColumnSpan="2" Background="#FF288AC7" Foreground="White" FontWeight="Bold" Click="btnaide_Click">REGLE ET AIDE</Button>
+        <Button x:Name="btnjouer" Margin="4,144,4,57" Grid.Row="1" Grid.Column="1" FontSize="22" Background="#FF288AC7" Foreground="White" FontWeight="Bold" Grid.RowSpan="2" Click="btnjouer_Click">JOUER</Button>
+    </Grid>
+</Page>

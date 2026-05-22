@@ -1,0 +1,46 @@
+﻿<Page x:Class="SAEIHM.PageAide"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SAEIHM"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageAide">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="11*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="2" Margin="200,10,200,27" TextAlignment="Center" VerticalAlignment="Center">REGLE ET AIDE</TextBlock>
+        <Button x:Name="btnretour" Margin="33,19,300,36" FontSize="24" Background="#FF288AC7" Foreground="White" Click="btnretour_Click">⬅️</Button>
+
+        <StackPanel Grid.ColumnSpan="2"  Grid.Row="1" >
+            
+            <TextBlock TextAlignment="Center" FontWeight="Bold" Text="Le but est simple :" FontSize="16" />
+            <TextBlock TextAlignment="Center" Text="Être le premier à aligner 4 pions de sa couleur" FontSize="16" />
+
+            <TextBlock TextAlignment="Center" FontWeight="Bold" Text="Comment on joue ?" FontSize="16" />
+            <TextBlock TextAlignment="Center" Text="Le jeu se joue à 2 joueurs" FontSize="16" />
+            <TextBlock TextAlignment="Center" Text="Chacun a une couleur (en général le rouge et le jaune)" FontSize="16" />
+            <TextBlock TextAlignment="Center" Text="À tour de rôle, chaque joueur dépose un pion dans une colonne" FontSize="16" />
+            <TextBlock TextAlignment="Center" Text="Le pion tombe tout en bas (comme par gravité)" FontSize="16" />
+
+            <TextBlock TextAlignment="Center" FontWeight="Bold" Text="Comment gagner ?" FontSize="16" />
+            <TextBlock TextAlignment="Center" Text="Tu gagnes si tu arrives à aligner 4 pions :" FontSize="16" />
+
+            <TextBlock TextAlignment="Center" Text="Horizontalement ➡️" FontSize="16" />
+            <TextBlock TextAlignment="Center" Text="Verticalement ⬇️" FontSize="16" />
+            <TextBlock TextAlignment="Center" Text="En diagonale ↘️ ou ↗️" FontSize="16" />
+
+            <TextBlock TextAlignment="Center" FontWeight="Bold" Text="Fin de partie" FontSize="16" />
+            <TextBlock TextAlignment="Center" Text="Si toute la grille est remplie sans alignement de 4 → égalité" FontSize="16" />
+        </StackPanel>
+        
+    </Grid>
+</Page>
