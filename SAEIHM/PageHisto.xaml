@@ -8,17 +8,28 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageHisto">
 
-    <Grid Background="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="11*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <TextBlock FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="2" Margin="200,10,200,27" TextAlignment="Center" VerticalAlignment="Center">HISTORIQUE DU SCORE</TextBlock>
-        <Button x:Name="btnretour" Margin="33,19,300,36" FontSize="24" Background="#FF288AC7" Foreground="White" Click="btnretour_Click"  >⬅️</Button>
+	<Grid Background="White">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="3*"/>
+			<RowDefinition Height="11*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<TextBlock FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="2" Margin="200,10,200,27" TextAlignment="Center" VerticalAlignment="Center">HISTORIQUE DU SCORE</TextBlock>
+		<Button x:Name="btnretour" Margin="33,19,300,36" FontSize="24" Background="#FF288AC7" Foreground="White" Click="btnretour_Click"  >⬅️</Button>
 
-    </Grid>
+		<DataGrid x:Name="TableauScore" AutoGenerateColumns="False" Grid.ColumnSpan="2" Margin="141,29,141,40" Grid.Row="1">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="N° Partie" Binding="{Binding NumeroPartie}" Width="*" />
+				<DataGridTextColumn Header="Mode" Binding="{Binding Mode}" Width="*" />
+				<DataGridTextColumn Header="Temps de partie" Binding="{Binding TempsPartie}" Width="*" />
+				<DataGridTextColumn Header="Difficulté IA" Binding="{Binding DifficulteIA}" Width="*" />
+				<DataGridTextColumn Header="Score mode challenge" Binding="{Binding ScoreChallenge}" Width="1.5*" />
+			</DataGrid.Columns>
+		</DataGrid>
+
+	</Grid>
+
 </Page>
