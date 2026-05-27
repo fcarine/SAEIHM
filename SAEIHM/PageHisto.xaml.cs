@@ -19,9 +19,16 @@ namespace SAEIHM
     /// </summary>
     public partial class PageHisto : Page
     {
+        // Liste dynamique des scores
+        public static ObservableCollection<ScorePartie> HistoriqueScores
+            = new ObservableCollection<ScorePartie>();
+
         public PageHisto()
         {
             InitializeComponent();
+
+            // Relie le DataGrid à la liste
+            TableauScore.ItemsSource = HistoriqueScores;
         }
 
         private void btnretour_Click(object sender, RoutedEventArgs e)
