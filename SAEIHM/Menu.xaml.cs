@@ -41,7 +41,7 @@ namespace SAEIHM
 
         private void btnquitter_Click(object sender, RoutedEventArgs e)
         {
-            
+            Window.GetWindow(this).Close();
         }
     }
 }

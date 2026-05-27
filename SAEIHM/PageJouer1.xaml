@@ -17,8 +17,10 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="2" Margin="200,10,200,27" TextAlignment="Center" VerticalAlignment="Center">JOUER</TextBlock>
+        <TextBlock FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="2" Margin="200,10,200,20" TextAlignment="Center" VerticalAlignment="Center" Height="67" Padding="0,10,0,0">JOUER</TextBlock>
         <Button x:Name="btnretour" Margin="33,19,300,36" FontSize="24" Background="#FF288AC7" Foreground="White" Click="btnretour_Click">⬅️</Button>
-        
+        <Button x:Name="btnreprendre" Margin="63,103,63,157" Grid.Row="1" Grid.Column="0" FontSize="22"  Background="#FF288AC7" Foreground="White" FontWeight="Bold" >Reprendre la partie</Button>
+        <Button x:Name="btnnouvelle" Margin="63,103,63,157" Grid.Row="1" Grid.Column="1" FontSize="22" Background="#FF288AC7" Foreground="White" FontWeight="Bold" >Nouvelle partie</Button>
+
     </Grid>
 </Page>

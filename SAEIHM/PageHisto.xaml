@@ -17,19 +17,23 @@
 			<ColumnDefinition/>
 			<ColumnDefinition/>
 		</Grid.ColumnDefinitions>
-		<TextBlock FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="2" Margin="200,10,200,27" TextAlignment="Center" VerticalAlignment="Center">HISTORIQUE DU SCORE</TextBlock>
+		<TextBlock FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="2" Margin="200,10,200,20" TextAlignment="Center" VerticalAlignment="Center" Height="67" Padding="0,10,0,0">HISTORIQUE DU SCORE</TextBlock>
 		<Button x:Name="btnretour" Margin="33,19,300,36" FontSize="24" Background="#FF288AC7" Foreground="White" Click="btnretour_Click"  >⬅️</Button>
 
-		<DataGrid x:Name="TableauScore" AutoGenerateColumns="False" Grid.ColumnSpan="2" Margin="141,29,141,40" Grid.Row="1">
-			<DataGrid.Columns>
-				<DataGridTextColumn Header="N° Partie" Binding="{Binding NumeroPartie}" Width="*" />
-				<DataGridTextColumn Header="Mode" Binding="{Binding Mode}" Width="*" />
-				<DataGridTextColumn Header="Temps de partie" Binding="{Binding TempsPartie}" Width="*" />
-				<DataGridTextColumn Header="Difficulté IA" Binding="{Binding DifficulteIA}" Width="*" />
-				<DataGridTextColumn Header="Score mode challenge" Binding="{Binding ScoreChallenge}" Width="1.5*" />
-			</DataGrid.Columns>
-		</DataGrid>
+        <ListView x:Name="TableauScore" Grid.Row="1" Grid.ColumnSpan="2" Margin="141,29,141,40">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="N° Partie" DisplayMemberBinding="{Binding NumeroPartie}" Width="80"/>
+                    <GridViewColumn Header="Mode" DisplayMemberBinding="{Binding Mode}" Width="80"/>
+                    <GridViewColumn Header="Temps de partie" DisplayMemberBinding="{Binding TempsPartie}" Width="100"/>
+                    <GridViewColumn Header="Difficulté IA" DisplayMemberBinding="{Binding DifficulteIA}" Width="120"/>
+                    <GridViewColumn Header="Score mode challenge" DisplayMemberBinding="{Binding ScoreChallenge}" Width="140"/>
 
-	</Grid>
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+
+    </Grid>
 
 </Page>
