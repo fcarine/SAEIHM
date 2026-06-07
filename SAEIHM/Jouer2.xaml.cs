@@ -14,18 +14,22 @@ using System.Windows.Shapes;
 namespace SAEIHM
 {
     /// <summary>
-    /// Logique d'interaction pour Page1.xaml
+    /// Logique d'interaction pour Jouer2.xaml
     /// </summary>
-    public partial class PageAide : Page
+    public partial class Jouer2 : Page
     {
-        public PageAide()
+        public Jouer2()
         {
             InitializeComponent();
         }
-
         private void Btnretour_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Menu());
+            NavigationService.Navigate(new PageChoisirMode());
+        }
+
+        private void Btnmode_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Confinterface());
         }
     }
 }

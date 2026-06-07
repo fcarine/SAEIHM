@@ -24,22 +24,22 @@ namespace SAEIHM
             InitializeComponent();
         }
 
-        private void btnaide_Click(object sender, RoutedEventArgs e)
+        private void Btnaide_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new PageAide());
         }
 
-        private void btnhisto_Click(object sender, RoutedEventArgs e)
+        private void Btnhisto_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new PageHisto());
         }
 
-        private void btnjouer_Click(object sender, RoutedEventArgs e)
+        private void Btnjouer_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new PageJouer1());
         }
 
-        private void btnquitter_Click(object sender, RoutedEventArgs e)
+        private void Btnquitter_Click(object sender, RoutedEventArgs e)
         {
             Window.GetWindow(this).Close();
         }

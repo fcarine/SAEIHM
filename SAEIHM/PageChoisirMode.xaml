@@ -10,7 +10,7 @@
 
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3.5*"/>
             <RowDefinition Height="11*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -18,12 +18,34 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+
         <TextBlock FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="3" Margin="200,10,200,20" TextAlignment="Center" VerticalAlignment="Center" Height="67" Padding="0,10,0,0">JOUER</TextBlock>
-        <Button x:Name="btnretour" Margin="33,19,150,36" FontSize="24" Background="#FF288AC7" Foreground="White" Click="btnretour_Click">⬅️</Button>
-        <Button Margin="68,22,68,303" Grid.Row="1" FontWeight="Bold" Background="#FF288AC7" Foreground="White" FontSize="18">LOCAL</Button>
-        <Button Margin="68,22,68,303" Grid.Row="1" Grid.Column="1" FontWeight="Bold" Background="#FF288AC7" Foreground="White" FontSize="18">CONTRE IA</Button>
-        <Button Margin="68,22,68,303" Grid.Row="1" Grid.Column="2" FontWeight="Bold" Background="#FF288AC7" Foreground="White" FontSize="18">EN LIGNE</Button>
+        <Button x:Name="Btnretour" Margin="33,19,150,36" FontSize="24" Background="#FF288AC7" Foreground="White" Click="Btnretour_Click">⬅️</Button>
 
+        <RadioButton x:Name="Btnlocal" Margin="75,23,61,64" Grid.Row="1" FontWeight="Bold" FontSize="20" Checked="RadioButton_Checked">LOCAL</RadioButton>
+        <RadioButton x:Name="BtnIA" Margin="68,22,68,64" Grid.Row="1" Grid.Column="1" FontWeight="Bold" FontSize="20" Checked="RadioButton_Checked">CONTRE IA</RadioButton>
+        <RadioButton x:Name="Btnligne" Margin="68,22,68,64" Grid.Row="1" Grid.Column="2" FontWeight="Bold" FontSize="20" Checked="RadioButton_Checked">EN LIGNE</RadioButton>
 
+        <StackPanel x:Name="local" Grid.Row="1" Margin="10,89,10,45" IsEnabled="False">
+            <TextBlock FontSize="18" FontWeight="Bold">Saisir nom 1</TextBlock>
+            <TextBox x:Name="nom1" TextChanged="VerifEtat" Text="{Binding nom1, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock FontSize="18" Margin="0,30,0,0" FontWeight="Bold">Saisir nom 2</TextBlock>
+            <TextBox x:Name="nom2" TextChanged="VerifEtat" Text="{Binding nom2, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+
+        <StackPanel x:Name="IA" Grid.Column="1" Margin="10,89,10,88" Grid.Row="1" IsEnabled="False">
+            <RadioButton x:Name="facile" Unchecked="VerifEtat" FontWeight="Bold" FontSize="18" Margin="0,0,0,30" HorizontalAlignment="Center" >Facile</RadioButton>
+            <RadioButton x:Name="moyen" Unchecked="VerifEtat" FontWeight="Bold" FontSize="18" Margin="0,0,0,30" HorizontalAlignment="Center">Moyen</RadioButton>
+            <RadioButton x:Name="difficile" Unchecked="VerifEtat" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center">Difficile</RadioButton>
+        </StackPanel>
+
+        <StackPanel x:Name="ligne" Grid.Column="2" Grid.Row="1" Margin="10,89,10,88" IsEnabled="False">
+            <Button x:Name="Btnconnecter" Background="#FF288AC7" FontSize="18" FontWeight="Bold" Margin="20,0,20,50" Click="Btnconnecter_Click" >se connecter</Button>
+            <Button x:Name="Btninscrit" Background="#FF288AC7" FontSize="18" FontWeight="Bold" Margin="20,0,20,0" Click="Btninscrit_Click">s'inscrire</Button>
+        </StackPanel>
+
+        <Rectangle Grid.Column="0" Grid.Row="1" Width="2" Fill="#FF288AC7" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,40,0,20"/>
+        <Rectangle Grid.Column="1" Grid.Row="1" Width="2" Fill="#FF288AC7" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,40,0,20"/>
+        <Button x:Name="Btnvalide" IsEnabled="False" Background="#FF288AC7" FontSize="18" FontWeight="Bold" Grid.Column="2" Margin="102,10,23,61" Click="Btnvalide_Click">Valider</Button>
     </Grid>
 </Page>

@@ -14,18 +14,13 @@ using System.Windows.Shapes;
 namespace SAEIHM
 {
     /// <summary>
-    /// Logique d'interaction pour Page1.xaml
+    /// Logique d'interaction pour Parametre.xaml
     /// </summary>
-    public partial class PageAide : Page
+    public partial class Parametre : Page
     {
-        public PageAide()
+        public Parametre()
         {
             InitializeComponent();
-        }
-
-        private void Btnretour_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Menu());
         }
     }
 }

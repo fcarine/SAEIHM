@@ -21,11 +21,22 @@ namespace SAEIHM
         public PageJouer1()
         {
             InitializeComponent();
+            int partieSauvegarde = 0;
+            if (partieSauvegarde==0)
+            {
+                Btnreprendre.IsEnabled = false;
+            }
+
         }
 
-        private void btnretour_Click(object sender, RoutedEventArgs e)
+        private void Btnretour_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Menu());
+        }
+
+        private void Btnnouvelle_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PageChoisirMode());
         }
     }
 }

@@ -1,0 +1,35 @@
+﻿<Page x:Class="SAEIHM.Connexion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SAEIHM"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Puissance 4">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="11*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="2" Margin="200,10,200,20" TextAlignment="Center" VerticalAlignment="Center" Padding="0,10,0,0" Height="67">SE CONNECTER</TextBlock>
+        <Button x:Name="Btnretour" Margin="33,19,300,36" FontSize="24" Background="#FF288AC7" Foreground="White" Click="Btnretour_Click">⬅️</Button>
+
+        <StackPanel Grid.ColumnSpan="2" Margin="200,33,200,133" Grid.Row="1">
+            <TextBlock FontSize="18" FontWeight="Bold" Margin="0,0,0,5">Identifiant:</TextBlock>
+            <TextBox x:Name="ID" TextChanged="VerifEtat"/>
+            <TextBlock FontSize="18" FontWeight="Bold" Margin="0,30,0,5">Mot de passe:</TextBlock>
+            <PasswordBox x:Name="MDP" PasswordChanged="VerifEtat"/>
+            <TextBox x:Name="txtMDP" Visibility="Collapsed"/>
+            <Button x:Name="Btnvoirmdp" Background="#FF288AC7" Margin="300,5,10,0" Click="Btnvoirmdp_Click">Voir mdp</Button>
+        </StackPanel>
+
+        <Button x:Name="Btnconnextion" Grid.ColumnSpan="2" Margin="234,270,234,10" Grid.Row="1" FontSize="18" FontWeight="Bold" Background="#FF288AC7" IsEnabled="False" Click="Btnconnextion_Click">Se connecter</Button>
+        
+    </Grid>
+</Page>

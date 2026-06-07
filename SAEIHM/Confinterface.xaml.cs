@@ -14,18 +14,13 @@ using System.Windows.Shapes;
 namespace SAEIHM
 {
     /// <summary>
-    /// Logique d'interaction pour Page1.xaml
+    /// Logique d'interaction pour Confinterface.xaml
     /// </summary>
-    public partial class PageAide : Page
+    public partial class Confinterface : Page
     {
-        public PageAide()
+        public Confinterface()
         {
             InitializeComponent();
-        }
-
-        private void Btnretour_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Menu());
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<Page x:Class="SAEIHM.PageJouer1"
+﻿<Page x:Class="SAEIHM.Jouer2"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:SAEIHM"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageJouer1">
+      Title="Puissance 4">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -19,8 +19,8 @@
         </Grid.ColumnDefinitions>
         <TextBlock FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="2" Margin="200,10,200,20" TextAlignment="Center" VerticalAlignment="Center" Height="67" Padding="0,10,0,0">JOUER</TextBlock>
         <Button x:Name="Btnretour" Margin="33,19,300,36" FontSize="24" Background="#FF288AC7" Foreground="White" Click="Btnretour_Click">⬅️</Button>
-        <Button x:Name="Btnreprendre" Margin="63,103,63,157" Grid.Row="1" Grid.Column="0" FontSize="22"  Background="#FF288AC7" Foreground="White" FontWeight="Bold" >Reprendre la partie</Button>
-        <Button x:Name="Btnnouvelle" Margin="63,103,63,157" Grid.Row="1" Grid.Column="1" FontSize="22" Background="#FF288AC7" Foreground="White" FontWeight="Bold" Click="Btnnouvelle_Click" >Nouvelle partie</Button>
+        <Button x:Name="Btnclassic" Margin="63,103,63,157" Grid.Row="1" Grid.Column="0" FontSize="22"  Background="#FF288AC7" Foreground="White" FontWeight="Bold" Click="Btnmode_Click" >Mode classic</Button>
+        <Button x:Name="Btnchallenge" Margin="63,103,63,157" Grid.Row="1" Grid.Column="1" FontSize="22" Background="#FF288AC7" Foreground="White" FontWeight="Bold" Click="Btnmode_Click" >Mode challenge</Button>
 
     </Grid>
 </Page>
