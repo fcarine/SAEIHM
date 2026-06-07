@@ -28,9 +28,9 @@
 
         <StackPanel x:Name="local" Grid.Row="1" Margin="10,89,10,45" IsEnabled="False">
             <TextBlock FontSize="18" FontWeight="Bold">Saisir nom 1</TextBlock>
-            <TextBox x:Name="nom1" TextChanged="VerifEtat" Text="{Binding nom1, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="n1" TextChanged="VerifEtat" Text="{Binding nom1, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBlock FontSize="18" Margin="0,30,0,0" FontWeight="Bold">Saisir nom 2</TextBlock>
-            <TextBox x:Name="nom2" TextChanged="VerifEtat" Text="{Binding nom2, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="n2" TextChanged="VerifEtat" Text="{Binding nom2, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
 
         <StackPanel x:Name="IA" Grid.Column="1" Margin="10,89,10,88" Grid.Row="1" IsEnabled="False">

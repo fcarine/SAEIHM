@@ -1,4 +1,5 @@
 ﻿using ClassIdentifiant;
+using classPARA;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,7 +22,7 @@ namespace SAEIHM
         public PageChoisirMode()
         {
             InitializeComponent();
-            DataContext = new Identifiant();
+            DataContext = new MainViewModel();
         }
 
         private void Btnretour_Click(object sender, RoutedEventArgs e)
@@ -32,31 +33,42 @@ namespace SAEIHM
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton radiobouton = (RadioButton)sender;
+            MainViewModel vm = (MainViewModel)this.DataContext;
+            Para P = vm.ParaVM;
 
             if (radiobouton == Btnlocal)
             {
                 local.IsEnabled = true;
                 IA.IsEnabled = false;
                 ligne.IsEnabled = false;
+                P.Mode = "local";
             }
             else if (radiobouton == BtnIA)
             {
                 IA.IsEnabled = true;
                 local.IsEnabled = false;
                 ligne.IsEnabled = false;
+                P.Mode = "IA";
             }
             else if (radiobouton == Btnligne)
             {
                 ligne.IsEnabled = true;
                 IA.IsEnabled = false;
                 local.IsEnabled = false;
+                P.Mode = "ligne";
             }
         }
 
         private void VerifEtat(object sender, RoutedEventArgs e)
         {
-            bool nomsaisit =!string.IsNullOrWhiteSpace(nom1.Text) &&
-                !string.IsNullOrWhiteSpace(nom2.Text);
+            MainViewModel vm = (MainViewModel)this.DataContext;
+            Identifiant I = vm.IdentifiantVM;
+            I.Nom1 = n1.Text;
+            I.Nom2 = n2.Text;
+
+
+            bool nomsaisit =!string.IsNullOrWhiteSpace(n1.Text) &&
+                !string.IsNullOrWhiteSpace(n2.Text);
 
             bool modeChoisi = facile.IsChecked == true || moyen.IsChecked == true || difficile.IsChecked == true;
 

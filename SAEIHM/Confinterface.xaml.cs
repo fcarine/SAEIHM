@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassIdentifiant;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,6 +19,7 @@ namespace SAEIHM
         public Confinterface()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
         }
         private void Btnretour_Click(object sender, RoutedEventArgs e)
         {
@@ -34,5 +36,43 @@ namespace SAEIHM
         {
             NavigationService.Navigate(new Confpartie());
         }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton radiobouton = (RadioButton)sender;
+            MainViewModel vm = (MainViewModel)this.DataContext;
+            Para P = vm.ParaVM;
+
+            if (radiobouton == rouge)
+            {
+                P.Couleur1 = "rouge";
+                P.Couleur2 = "jaune";
+            }
+            else if (radiobouton == bleu)
+            {
+                P.Couleur1 = "bleu";
+                P.Couleur2 = "vert";
+            }
+            else if (radiobouton == rose)
+            {
+                P.Couleur1 = "rose";
+                P.Couleur2 = "noir";
+            }
+
+            if (radiobouton == rond)
+            {
+                P.Forme = "rond";
+            }
+            else if (radiobouton == caree)
+            {
+                P.Forme = "caree";
+            }
+            else if (radiobouton == etoile)
+            {
+                P.Forme = "etoile";
+            }
+
+        }
+
     }
 }

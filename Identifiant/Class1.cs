@@ -89,15 +89,79 @@ namespace ClassIdentifiant
         }
     }
 
+    public class Para : INotifyPropertyChanged
+    {
+        private string forme;
+        public string Forme
+        {
+            get => forme;
+            set
+            {
+                forme = value;
+                OnPropertyChanged(nameof(Forme));
+            }
+        }
+
+        private string mode;
+        public string Mode
+        {
+            get => mode;
+            set
+            {
+                mode = value;
+                OnPropertyChanged(nameof(Mode));
+            }
+        }
+
+        private string couleur1;
+        public string Couleur1
+        {
+            get => couleur1;
+            set
+            {
+                couleur1 = value;
+                OnPropertyChanged(nameof(Couleur1));
+            }
+        }
+
+        private string couleur2;
+        public string Couleur2
+        {
+            get => couleur2;
+            set
+            {
+                couleur2 = value;
+                OnPropertyChanged(nameof(Couleur2));
+            }
+        }
+
+        public Para()
+        {
+            Forme = "";
+            Mode = "";
+            Couleur1 = "Rouge";
+            Couleur2 = "Jaune";
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+
     public class MainViewModel
     {
         public Identifiant IdentifiantVM { get; set; }
         public NationaliteViewModel NationaliteVM { get; set; }
+        public Para ParaVM { get; set; }
 
         public MainViewModel()
         {
             IdentifiantVM = new Identifiant();
             NationaliteVM = new NationaliteViewModel();
+            ParaVM = new Para();
         }
     }
 
