@@ -22,5 +22,28 @@ namespace SAEIHM
         {
             InitializeComponent();
         }
+        private void Btnretour_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Confpartie());
+        }
+
+        private void clavier_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton radiobouton = (RadioButton)sender;
+            if (radiobouton == clavier)
+            {
+                clavierlabel.IsEnabled = true;
+            }
+            else
+            {
+                clavierlabel.IsEnabled=false;
+            }
+        }
+        private void VerifEtat(object sender, RoutedEventArgs e)
+        {
+            bool modeChoisi = souris.IsChecked == true || clavier.IsChecked == true || tactile.IsChecked == true;
+
+            Btnvalide.IsEnabled = modeChoisi;
+        }
     }
 }

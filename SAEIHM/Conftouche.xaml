@@ -8,7 +8,38 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Puissance 4">
 
-    <Grid>
-        
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="11*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="2" Margin="200,10,200,20" TextAlignment="Center" VerticalAlignment="Center" Height="67" Padding="0,10,0,0">CONFIGURER TOUCHES</TextBlock>
+        <Button x:Name="Btnretour" Margin="33,19,300,36" FontSize="24" Background="#FF288AC7" Foreground="White" Click="Btnretour_Click">⬅️</Button>
+
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Margin="99,10,100,287" Grid.Row="1">
+            <RadioButton x:Name="souris" Unchecked="VerifEtat" FontSize="24" FontWeight="Bold" Margin="20,0,0,0">SOURIS</RadioButton>
+            <RadioButton Unchecked="VerifEtat" x:Name="clavier" FontSize="24" FontWeight="Bold" Margin="100,0,0,0" Checked="clavier_Checked">CLAVIER</RadioButton>
+            <RadioButton x:Name="tactile" Unchecked="VerifEtat" FontSize="24" FontWeight="Bold" Margin="100,0,0,0">TACTILE</RadioButton>
+        </StackPanel>
+
+        <StackPanel x:Name="clavierlabel" IsEnabled="False" Grid.ColumnSpan="2" Margin="200,129,136,38" Grid.Row="1">
+            <TextBlock FontSize="18" FontWeight="Bold" Margin="0,0,0,3">Touche pour sélectionnerla case:</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton FontSize="18" FontWeight="Bold" Margin="20,0,0,0">Entrée</RadioButton>
+                <RadioButton FontSize="18" FontWeight="Bold" Margin="70,0,0,0">Espace</RadioButton>
+            </StackPanel>
+            <TextBlock FontSize="18" FontWeight="Bold" Margin="0,24,0,0">Touche pour naviguer sur la grille</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton FontSize="18" FontWeight="Bold" Margin="20,0,0,0">← →</RadioButton>
+                <RadioButton FontSize="18" FontWeight="Bold" Margin="70,0,0,0">A D</RadioButton>
+                <RadioButton FontSize="18" FontWeight="Bold" Margin="70,0,0,0">QD</RadioButton>
+            </StackPanel>
+        </StackPanel>
+        <Button x:Name="Btnvalide" IsEnabled="False" Background="#FF288AC7" FontSize="18" FontWeight="Bold" Grid.Column="1" Margin="212,21,22,36">Valider</Button>
+
     </Grid>
 </Page>

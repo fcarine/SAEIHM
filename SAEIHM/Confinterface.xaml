@@ -8,7 +8,34 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Puissance 4">
 
-    <Grid>
-        
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="11*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="2" Margin="200,10,200,20" TextAlignment="Center" VerticalAlignment="Center" Height="67" Padding="0,10,0,0">CONFIGURER INTERFACE</TextBlock>
+        <Button x:Name="Btnretour" Margin="33,19,300,36" FontSize="24" Background="#FF288AC7" Foreground="White" Click="Btnretour_Click">⬅️</Button>
+
+        <StackPanel Margin="10,34,10,70" Grid.Row="1">
+            <TextBlock FontSize="24" FontWeight="Bold" HorizontalAlignment="Center">Couleurs</TextBlock>
+            <RadioButton x:Name="rouge" Unchecked="VerifEtat" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0">Rouge et jaune</RadioButton>
+            <RadioButton x:Name="bleu" Unchecked="VerifEtat" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0">Bleu et vert</RadioButton>
+            <RadioButton x:Name="rose" Unchecked="VerifEtat" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0">Rose et blanc</RadioButton>
+        </StackPanel>
+        <Rectangle Grid.Column="0" Grid.Row="1" Width="2" Fill="#FF288AC7" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,40,0,20"/>
+        <StackPanel Grid.Column="1" Margin="10,34,10,70" Grid.Row="1">
+            <TextBlock FontSize="24" FontWeight="Bold" HorizontalAlignment="Center">Formes</TextBlock>
+            <RadioButton x:Name="rond" Unchecked="VerifEtat" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0">Rond</RadioButton>
+            <RadioButton x:Name="caree" Unchecked="VerifEtat" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0">Carée</RadioButton>
+            <RadioButton x:Name="etoile" Unchecked="VerifEtat" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,0">Etoile</RadioButton>
+        </StackPanel>
+
+        <Button x:Name="Btnvalide" IsEnabled="False" Background="#FF288AC7" FontSize="18" FontWeight="Bold" Grid.Column="1" Margin="241,27,36,36" RenderTransformOrigin="0.49,0.017" Foreground="White" Click="Btnvalide_Click">Valider</Button>
+
+
     </Grid>
 </Page>

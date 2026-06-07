@@ -35,7 +35,7 @@
                 <ComboBox x:Name="nationalite"  ItemsSource="{Binding NationaliteVM.Collection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Pays" Width="150"/>
             </StackPanel>
 
-
+        
         </StackPanel>
 
         <Button x:Name="Btninscrire" Grid.ColumnSpan="2" Margin="234,270,234,10" Grid.Row="1" FontSize="18" FontWeight="Bold" Background="#FF288AC7" IsEnabled="False" Click="Btninscrire_Click" >S'inscrire</Button>

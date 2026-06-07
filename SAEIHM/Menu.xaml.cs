@@ -43,6 +43,11 @@ namespace SAEIHM
         {
             Window.GetWindow(this).Close();
         }
+
+        private void Btnpara_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Parametre());
+        }
     }
 }
 

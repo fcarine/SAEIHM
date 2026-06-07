@@ -24,5 +24,7 @@
         <Button x:Name="Btnhisto" Margin="57,10,219,47" Grid.Row="1" Grid.Column="0" FontSize="22" Grid.ColumnSpan="2" Background="#FF288AC7" Foreground="White" FontWeight="Bold" Click="Btnhisto_Click">HISTORIQUE DU SCORE</Button>
         <Button x:Name="Btnaide" Margin="216,10,60,47" Grid.Row="1" Grid.Column="1" FontSize="22" Grid.ColumnSpan="2" Background="#FF288AC7" Foreground="White" FontWeight="Bold" Click="Btnaide_Click">REGLE ET AIDE</Button>
         <Button x:Name="Btnjouer" Margin="4,144,4,57" Grid.Row="1" Grid.Column="1" FontSize="22" Background="#FF288AC7" Foreground="White" FontWeight="Bold" Grid.RowSpan="2" Click="Btnjouer_Click">JOUER</Button>
+        <Button x:Name="Btnpara" Margin="114,18,37,93"  Background="#FF288AC7" FontSize="20" FontWeight="Bold" Foreground="White" Grid.Column="2" Click="Btnpara_Click">Paramètre</Button>
+
     </Grid>
 </Page>

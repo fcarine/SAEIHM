@@ -22,5 +22,20 @@ namespace SAEIHM
         {
             InitializeComponent();
         }
+        private void Btnretour_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PageChoisirMode());
+        }
+        private void VerifEtat(object sender, RoutedEventArgs e)
+        {
+            bool forme = rond.IsChecked == true || caree.IsChecked == true || etoile.IsChecked == true;
+            bool couleur = rouge.IsChecked == true || bleu.IsChecked == true || rose.IsChecked == true;
+            Btnvalide.IsEnabled = couleur && forme;
+        }
+
+        private void Btnvalide_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Confpartie());
+        }
     }
 }

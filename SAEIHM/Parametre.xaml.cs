@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassIdentifiant;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,38 @@ namespace SAEIHM
         public Parametre()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
+        }
+        private void Btnretour_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Menu());
+        }
+
+        private double taillePolice = 18;
+        private void BtnAugmenter_Click(object sender, RoutedEventArgs e)
+        {
+            if (taillePolice < 40)
+            {
+                taillePolice++;
+                MettreAJourPolice();
+            }
+        }
+        private void BtnDiminuer_Click(object sender, RoutedEventArgs e)
+        {
+            if (taillePolice > 8)
+            {
+                taillePolice--;
+                MettreAJourPolice();
+            }
+        }
+        private void MettreAJourPolice()
+        {
+            TxtFontSize.Text = taillePolice.ToString();
+        }
+
+        private void Btnvalide_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Menu());
         }
     }
 }
