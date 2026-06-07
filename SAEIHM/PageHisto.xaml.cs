@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace SAEIHM
 {
-    /// <summary>
-    /// Logique d'interaction pour PageHisto.xaml
-    /// </summary>
     public partial class PageHisto : Page
     {
         public PageHisto()

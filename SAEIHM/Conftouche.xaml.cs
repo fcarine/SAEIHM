@@ -13,9 +13,6 @@ using System.Windows.Shapes;
 
 namespace SAEIHM
 {
-    /// <summary>
-    /// Logique d'interaction pour Conftouche.xaml
-    /// </summary>
     public partial class Conftouche : Page
     {
         public Conftouche()

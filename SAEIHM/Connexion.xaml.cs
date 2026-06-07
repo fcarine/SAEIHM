@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace SAEIHM
 {
-    /// <summary>
-    /// Logique d'interaction pour Connexion.xaml
-    /// </summary>
     public partial class Connexion : Page
     {
         public Connexion()

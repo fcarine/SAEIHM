@@ -13,9 +13,6 @@ using System.Windows.Shapes;
 
 namespace SAEIHM
 {
-    /// <summary>
-    /// Logique d'interaction pour PageJouer1.xaml
-    /// </summary>
     public partial class PageJouer1 : Page
     {
         public PageJouer1()

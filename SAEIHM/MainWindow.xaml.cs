@@ -11,9 +11,6 @@ using System.Windows.Shapes;
 
 namespace SAEIHM
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()

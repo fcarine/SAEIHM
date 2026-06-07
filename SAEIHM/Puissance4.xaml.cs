@@ -13,20 +13,14 @@ using System.Windows.Shapes;
 
 namespace SAEIHM
 {
-    public partial class Jouer2 : Page
+    /// <summary>
+    /// Logique d'interaction pour Puissance4.xaml
+    /// </summary>
+    public partial class Puissance4 : Page
     {
-        public Jouer2()
+        public Puissance4()
         {
             InitializeComponent();
-        }
-        private void Btnretour_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new PageChoisirMode());
-        }
-
-        private void Btnmode_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Confinterface());
         }
     }
 }

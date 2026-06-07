@@ -13,9 +13,6 @@ using System.Windows.Shapes;
 
 namespace SAEIHM
 {
-    /// <summary>
-    /// Logique d'interaction pour Confinterface.xaml
-    /// </summary>
     public partial class Confinterface : Page
     {
         public Confinterface()

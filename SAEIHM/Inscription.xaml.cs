@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace SAEIHM
 {
-    /// <summary>
-    /// Logique d'interaction pour Inscription.xaml
-    /// </summary>
     public partial class Inscription : Page
     {
         public Inscription()

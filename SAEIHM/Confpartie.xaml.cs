@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace SAEIHM
 {
-    /// <summary>
-    /// Logique d'interaction pour Confpartie.xaml
-    /// </summary>
     public partial class Confpartie : Page
     {
         public Confpartie()

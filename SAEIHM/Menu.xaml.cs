@@ -14,9 +14,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace SAEIHM
 {
-    /// <summary>
-    /// Logique d'interaction pour Menu.xaml
-    /// </summary>
+
     public partial class Menu : Page
     {
         public Menu()

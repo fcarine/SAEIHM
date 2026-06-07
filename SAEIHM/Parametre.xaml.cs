@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace SAEIHM
 {
-    /// <summary>
-    /// Logique d'interaction pour Parametre.xaml
-    /// </summary>
     public partial class Parametre : Page
     {
         public Parametre()
