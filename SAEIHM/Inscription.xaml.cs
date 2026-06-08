@@ -2,6 +2,7 @@
 using ClassIdentifiant;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -57,15 +58,15 @@ namespace SAEIHM
         {
             MainViewModel vm = (MainViewModel)this.DataContext;
             Identifiant I = vm.IdentifiantVM;
-            if (MDP.Password.Length < 6)
-            {
-                MessageBox.Show("Mot de passe doit contenir 6 caractères");
-                return;
-            }
-
             if (ID.Text == I.IdentifiantValue)
             {
                 MessageBox.Show("Identifiant déjà utilisé");
+                return;
+            }
+
+            if (MDP.Password.Length < 6)
+            {
+                MessageBox.Show("Mot de passe doit contenir 6 caractères");
                 return;
             }
 
