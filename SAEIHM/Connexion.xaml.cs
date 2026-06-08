@@ -34,6 +34,10 @@ namespace SAEIHM
             {
                 Btnconnextion.IsEnabled = true;
             }
+            else
+            {
+                Btnconnextion.IsEnabled=false;
+            }
             
         }
 
