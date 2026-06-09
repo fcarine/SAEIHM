@@ -10,37 +10,67 @@
 
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="11*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="310*"/>
+            <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <TextBlock FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="2" Margin="200,10,200,20" TextAlignment="Center" VerticalAlignment="Center" Padding="0,10,0,0" Height="67">REGLE ET AIDE</TextBlock>
-        <Button x:Name="Btnretour" Margin="33,19,300,36" FontSize="24" Background="#FF288AC7" Foreground="White" Click="Btnretour_Click">⬅️</Button>
 
-        <StackPanel Grid.ColumnSpan="2"  Grid.Row="1" >
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="15*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="280*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="150*"/>
+                <ColumnDefinition Width="15*"/>
+            </Grid.ColumnDefinitions>
 
-            <TextBlock TextAlignment="Center" FontWeight="Bold" Text="Le but est simple :" FontSize="16" />
-            <TextBlock TextAlignment="Center" Text="Être le premier à aligner 4 pions de sa couleur" FontSize="16" />
+            <Button x:Name="Btnretour" 
+                    Background="#FF288AC7" Foreground="White" 
+                    FontSize="24" FontWeight="Bold"
+                    Click="Btnretour_Click" Grid.Row="1" Grid.Column="1">
+                ⬅️
+            </Button>
 
-            <TextBlock TextAlignment="Center" FontWeight="Bold" Text="Comment on joue ?" FontSize="16" />
-            <TextBlock TextAlignment="Center" Text="Le jeu se joue à 2 joueurs" FontSize="16" />
-            <TextBlock TextAlignment="Center" Text="Chacun a une couleur (en général le rouge et le jaune)" FontSize="16" />
-            <TextBlock TextAlignment="Center" Text="À tour de rôle, chaque joueur dépose un pion dans une colonne" FontSize="16" />
-            <TextBlock TextAlignment="Center" Text="Le pion tombe tout en bas (comme par gravité)" FontSize="16" />
+            <Border Grid.Column="3" Grid.RowSpan="3" Background="#FF288AC7">
+                <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White">
+                    REGLE ET AIDE
+                </TextBlock>
+            </Border>
+        </Grid>
 
-            <TextBlock TextAlignment="Center" FontWeight="Bold" Text="Comment gagner ?" FontSize="16" />
-            <TextBlock TextAlignment="Center" Text="Tu gagnes si tu arrives à aligner 4 pions :" FontSize="16" />
+        <Grid Grid.Row="3">
+            <Viewbox Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,0">
+                <StackPanel>
+                    <TextBlock TextAlignment="Center" FontWeight="Bold" Text="Le but est simple :" FontSize="16" />
+                    <TextBlock TextAlignment="Center" Text="Être le premier à aligner 4 pions de sa couleur" FontSize="16" Margin="0,0,0,10"/>
 
-            <TextBlock TextAlignment="Center" Text="Horizontalement ➡️" FontSize="16" />
-            <TextBlock TextAlignment="Center" Text="Verticalement ⬇️" FontSize="16" />
-            <TextBlock TextAlignment="Center" Text="En diagonale ↘️ ou ↗️" FontSize="16" />
+                    <TextBlock TextAlignment="Center" FontWeight="Bold" Text="Comment on joue ?" FontSize="16" />
+                    <TextBlock TextAlignment="Center" Text="Le jeu se joue à 2 joueurs" FontSize="16" />
+                    <TextBlock TextAlignment="Center" Text="Chacun a une couleur (en général le rouge et le jaune)" FontSize="16" />
+                    <TextBlock TextAlignment="Center" Text="À tour de rôle, chaque joueur dépose un pion dans une colonne" FontSize="16" />
+                    <TextBlock TextAlignment="Center" Text="Le pion tombe tout en bas (comme par gravité)" FontSize="16" Margin="0,0,0,10"/>
 
-            <TextBlock TextAlignment="Center" FontWeight="Bold" Text="Fin de partie" FontSize="16" />
-            <TextBlock TextAlignment="Center" Text="Si toute la grille est remplie sans alignement de 4 → égalité" FontSize="16" />
-        </StackPanel>
+                    <TextBlock TextAlignment="Center" FontWeight="Bold" Text="Comment gagner ?" FontSize="16" />
+                    <TextBlock TextAlignment="Center" Text="Tu gagnes si tu arrives à aligner 4 pions :" FontSize="16" />
+
+                    <TextBlock TextAlignment="Center" Text="Horizontalement ➡️" FontSize="16" />
+                    <TextBlock TextAlignment="Center" Text="Verticalement ⬇️" FontSize="16" />
+                    <TextBlock TextAlignment="Center" Text="En diagonale ↘️ ou ↗️" FontSize="16" Margin="0,0,0,10"/>
+
+                    <TextBlock TextAlignment="Center" FontWeight="Bold" Text="Fin de partie" FontSize="16" />
+                    <TextBlock TextAlignment="Center" Text="Si toute la grille est remplie sans alignement de 4 → égalité" FontSize="16" />
+                </StackPanel>
+            </Viewbox>
+        </Grid>
 
     </Grid>
 </Page>
