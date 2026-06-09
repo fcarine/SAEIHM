@@ -39,7 +39,7 @@
                 <RadioButton FontSize="18" FontWeight="Bold" Margin="70,0,0,0">QD</RadioButton>
             </StackPanel>
         </StackPanel>
-        <Button x:Name="Btnvalide" IsEnabled="False" Background="#FF288AC7" FontSize="18" FontWeight="Bold" Grid.Column="1" Margin="212,21,22,36">Valider</Button>
+        <Button x:Name="Btnvalide" IsEnabled="False" Background="#FF288AC7" FontSize="18" FontWeight="Bold" Grid.Column="1" Margin="212,21,22,36" Click="Btnvalide_Click">Valider</Button>
 
     </Grid>
 </Page>
