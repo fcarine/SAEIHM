@@ -44,34 +44,16 @@ namespace SAEIHM
             MainViewModel vm = (MainViewModel)this.DataContext;
             Para P = vm.ParaVM;
 
-            if (radiobouton == rouge)
-            {
-                P.Couleur1 = "rouge";
-                P.Couleur2 = "jaune";
-            }
-            else if (radiobouton == bleu)
-            {
-                P.Couleur1 = "bleu";
-                P.Couleur2 = "vert";
-            }
-            else if (radiobouton == rose)
-            {
-                P.Couleur1 = "rose";
-                P.Couleur2 = "noir";
-            }
 
-            if (radiobouton == rond)
-            {
-                P.Forme = "rond";
-            }
-            else if (radiobouton == caree)
-            {
-                P.Forme = "caree";
-            }
-            else if (radiobouton == etoile)
-            {
-                P.Forme = "etoile";
-            }
+            // 1. Vérification des couleurs
+            if (radiobouton == rouge) { P.Couleur1 = "rouge"; P.Couleur2 = "jaune"; return; }
+            if (radiobouton == bleu) { P.Couleur1 = "bleu"; P.Couleur2 = "vert"; return; }
+            if (radiobouton == rose) { P.Couleur1 = "rose"; P.Couleur2 = "noir"; return; }
+
+            // 2. Vérification des formes
+            if (radiobouton == rond) { P.Forme = "rond"; return; }
+            if (radiobouton == caree) { P.Forme = "caree"; return; }
+            if (radiobouton == etoile) { P.Forme = "etoile"; return; }
 
         }
 

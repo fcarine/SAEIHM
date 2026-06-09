@@ -10,16 +10,41 @@
 
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="11*"/>
+            <RowDefinition Height="Auto"/>
+            <!-- Header -->
+            <RowDefinition Height="*"/>
+            <!-- Grille centrée -->
+            <RowDefinition Height="Auto"/>
+            <!-- Footer VALIDER -->
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <TextBlock x:Name="joueur" FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="2" Margin="200,10,200,20" TextAlignment="Center" VerticalAlignment="Center" Height="67" Padding="0,10,0,0"/>
-        
-        
+
+        <!-- ═══ HEADER : nom joueur + bouton pause ═══ -->
+        <Grid Grid.Row="0" Margin="20,18,20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Bandeau nom joueur (centré visuellement sur toute la largeur) -->
+            <Border Grid.Column="0" Background="#4AADEA" CornerRadius="30"
+                Margin="0,0,12,0" Padding="0,12">
+                <TextBlock x:Name="TbNomCourant"
+                       FontSize="26" FontWeight="Bold"
+                       Foreground="White" HorizontalAlignment="Center"/>
+            </Border>
+
+            
+        </Grid>
+
+        <!-- ═══ GRILLE centrée ═══ -->
+        <Border Grid.Row="1"
+            Background="#E8E8E8" CornerRadius="10"
+            Margin="80,20,80,0"
+            Padding="12">
+            <UniformGrid x:Name="GrilleUI" Rows="6" Columns="7"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"/>
+        </Border>
 
     </Grid>
 </Page>

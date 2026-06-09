@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Text;
 
 namespace Systeme.Joueur
@@ -55,10 +56,10 @@ namespace Systeme.Joueur
         {
             Forme = "";
             Mode = "";
-            Couleur1 = "Rouge";
-            Couleur2 = "Jaune";
+            Couleur1 = "";
+            Couleur2 = "";
         }
-
+       
         public event PropertyChangedEventHandler? PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName)

@@ -68,7 +68,7 @@ namespace Systeme.Jeu
                 }
                 return false; // colonne pleine
             }
-
+            
             private void SwitchPlayer() => CurrentPlayer = CurrentPlayer == 1 ? 2 : 1;
 
             private bool CheckWin(int x, int y)
