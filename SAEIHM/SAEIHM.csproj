@@ -9,8 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\classPARA\classPARA.csproj" />
-    <ProjectReference Include="..\Identifiant\Classe.csproj" />
+    <ProjectReference Include="..\Systeme\Systeme.csproj" />
   </ItemGroup>
 
 </Project>

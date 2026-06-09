@@ -15,6 +15,7 @@ namespace SAEIHM
     {
         public MainWindow()
         {
+            //Bonjour
             InitializeComponent();
             MainFrame.Navigate(new Menu());
         }
