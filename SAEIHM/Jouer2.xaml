@@ -10,17 +10,79 @@
 
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="11*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="45*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <TextBlock FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="2" Margin="200,10,200,20" TextAlignment="Center" VerticalAlignment="Center" Height="67" Padding="0,10,0,0">JOUER</TextBlock>
-        <Button x:Name="Btnretour" Margin="33,19,300,36" FontSize="24" Background="#FF288AC7" Foreground="White" Click="Btnretour_Click">⬅️</Button>
-        <Button x:Name="Btnclassic" Margin="63,103,63,157" Grid.Row="1" Grid.Column="0" FontSize="22"  Background="#FF288AC7" Foreground="White" FontWeight="Bold" Click="Btnmode_Click" >Mode classic</Button>
-        <Button x:Name="Btnchallenge" Margin="63,103,63,157" Grid.Row="1" Grid.Column="1" FontSize="22" Background="#FF288AC7" Foreground="White" FontWeight="Bold" Click="Btnmode_Click" >Mode challenge</Button>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="15*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="280*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="15*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="Btnretour" 
+                    Background="#FF288AC7" Foreground="White" 
+                    FontSize="24" FontWeight="Bold"
+                    Click="Btnretour_Click" Grid.Row="1" Grid.Column="1">
+                ⬅️
+            </Button>
+
+            <Border Grid.Column="3" Grid.RowSpan="3" Background="#FF288AC7">
+                <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White">
+                    JOUER
+                </TextBlock>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="250*"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="Btnclassic" Grid.Column="1" 
+                        Background="#FF288AC7" Foreground="White" 
+                        FontSize="22" FontWeight="Bold" 
+                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                        Click="Btnmode_Click">
+                    Mode classic
+                </Button>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="250*"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="Btnchallenge" Grid.Column="1" 
+                        Background="#FF288AC7" Foreground="White" 
+                        FontSize="22" FontWeight="Bold" 
+                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                        Click="Btnmode_Click">
+                    Mode challenge
+                </Button>
+            </Grid>
+        </Grid>
 
     </Grid>
 </Page>

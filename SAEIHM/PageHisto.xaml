@@ -8,32 +8,64 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Puissance 4">
 
-	<Grid Background="White">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="3*"/>
-			<RowDefinition Height="11*"/>
-		</Grid.RowDefinitions>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition/>
-			<ColumnDefinition/>
-		</Grid.ColumnDefinitions>
-		<TextBlock FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="2" Margin="200,10,200,20" TextAlignment="Center" VerticalAlignment="Center" Height="67" Padding="0,10,0,0">HISTORIQUE DU SCORE</TextBlock>
-		<Button x:Name="Btnretour" Margin="33,19,300,36" FontSize="24" Background="#FF288AC7" Foreground="White" Click="Btnretour_Click"  >⬅️</Button>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="270*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
 
-        <ListView x:Name="TableauScore" Grid.Row="1" Grid.ColumnSpan="2" Margin="141,29,141,40">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="N° Partie" DisplayMemberBinding="{Binding NumeroPartie}" Width="80"/>
-                    <GridViewColumn Header="Mode" DisplayMemberBinding="{Binding Mode}" Width="80"/>
-                    <GridViewColumn Header="Temps de partie" DisplayMemberBinding="{Binding TempsPartie}" Width="100"/>
-                    <GridViewColumn Header="Difficulté IA" DisplayMemberBinding="{Binding DifficulteIA}" Width="120"/>
-                    <GridViewColumn Header="Score mode challenge" DisplayMemberBinding="{Binding ScoreChallenge}" Width="140"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="15*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="280*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="15*"/>
+            </Grid.ColumnDefinitions>
 
-                </GridView>
-            </ListView.View>
+            <Button x:Name="Btnretour" 
+                    Background="#FF288AC7" Foreground="White" 
+                    FontSize="24" FontWeight="Bold"
+                    Click="Btnretour_Click" Grid.Row="1" Grid.Column="1">
+                ⬅️
+            </Button>
 
-        </ListView>
+            <Border Grid.Column="3" Grid.RowSpan="3" Background="#FF288AC7">
+                <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White">
+                    HISTORIQUE DU SCORE
+                </TextBlock>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="700*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+
+            <ListView x:Name="TableauScore" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="N° Partie" DisplayMemberBinding="{Binding NumeroPartie}" Width="80"/>
+                        <GridViewColumn Header="Mode" DisplayMemberBinding="{Binding Mode}" Width="100"/>
+                        <GridViewColumn Header="Temps de partie" DisplayMemberBinding="{Binding TempsPartie}" Width="120"/>
+                        <GridViewColumn Header="Difficulté IA" DisplayMemberBinding="{Binding DifficulteIA}" Width="120"/>
+                        <GridViewColumn Header="Score mode challenge" DisplayMemberBinding="{Binding ScoreChallenge}" Width="160"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
 
     </Grid>
-
 </Page>

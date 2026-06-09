@@ -48,7 +48,7 @@
         </Grid>
 
         <Grid Grid.Row="3">
-            <Viewbox Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,0">
+            <Viewbox Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center" >
                 <StackPanel>
                     <TextBlock TextAlignment="Center" FontWeight="Bold" Text="Le but est simple :" FontSize="16" />
                     <TextBlock TextAlignment="Center" Text="Être le premier à aligner 4 pions de sa couleur" FontSize="16" Margin="0,0,0,10"/>
