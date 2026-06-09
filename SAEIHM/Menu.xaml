@@ -12,47 +12,52 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="15*"/>
             <RowDefinition Height="100*"/>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="100*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="80*"/>
             <RowDefinition Height="30*"/>
-            <RowDefinition Height="100*"/>
+            <RowDefinition Height="80*"/>
             <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="15*"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="15*"/>
                 <ColumnDefinition Width="150*"/>
                 <ColumnDefinition Width="30*"/>
-                <ColumnDefinition Width="300*"/>
+                <ColumnDefinition Width="280*"/>
                 <ColumnDefinition Width="30*"/>
                 <ColumnDefinition Width="150*"/>
-                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="15*"/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="Btnquitter" Grid.Column="1" 
+            <Button x:Name="Btnquitter" 
              Background="Red" Foreground="White" 
             FontSize="20" FontWeight="Bold"
-            Click="Btnquitter_Click">
+            Click="Btnquitter_Click" Grid.Row="1" Grid.Column="1" >
                 Quitter
             </Button>
 
-            <Border Grid.Column="3" Background="#FF288AC7" >
+            <Border Grid.Column="3" Grid.RowSpan="3" Background="#FF288AC7" >
                 <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White">
                 MENU PRINCIPAL
                 </TextBlock>
             </Border>
 
 
-            <Button x:Name="Btnpara" Grid.Column="5" 
+            <Button x:Name="Btnpara"
              Background="#FF288AC7" Foreground="White" 
             FontSize="18" FontWeight="Bold"
-            Click="Btnpara_Click">
+            Click="Btnpara_Click" Grid.Column="5" Grid.Row="1" >
                 Paramètre
             </Button>
         </Grid>
 
-        <Grid Grid.Row="3" Margin="0,0,0,1">
+        <Grid Grid.Row="3" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50*"/>
                 <ColumnDefinition Width="150*"/>
