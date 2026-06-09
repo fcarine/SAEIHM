@@ -10,26 +10,97 @@
 
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="11*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="190*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <TextBlock FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="2" Margin="200,10,200,20" TextAlignment="Center" VerticalAlignment="Center" Padding="0,10,0,0" Height="67">SE CONNECTER</TextBlock>
-        <Button x:Name="Btnretour" Margin="33,19,300,36" FontSize="24" Background="#FF288AC7" Foreground="White" Click="Btnretour_Click">⬅️</Button>
 
-        <StackPanel Grid.ColumnSpan="2" Margin="200,33,200,133" Grid.Row="1">
-            <TextBlock FontSize="18" FontWeight="Bold" Margin="0,0,0,5">Identifiant:</TextBlock>
-            <TextBox x:Name="ID" TextChanged="VerifEtat"/>
-            <TextBlock FontSize="18" FontWeight="Bold" Margin="0,30,0,5">Mot de passe:</TextBlock>
-            <PasswordBox x:Name="MDP" PasswordChanged="VerifEtat"/>
-            <TextBox x:Name="txtMDP" Visibility="Collapsed"/>
-            <Button x:Name="Btnvoirmdp" Background="#FF288AC7" Margin="300,5,10,0" Click="Btnvoirmdp_Click">Voir mdp</Button>
-        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="15*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="280*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="15*"/>
+            </Grid.ColumnDefinitions>
 
-        <Button x:Name="Btnconnextion" Grid.ColumnSpan="2" Margin="234,270,234,10" Grid.Row="1" FontSize="18" FontWeight="Bold" Background="#FF288AC7" IsEnabled="False" Click="Btnconnextion_Click">Se connecter</Button>
-        
+            <Button x:Name="Btnretour" 
+                    Background="#FF288AC7" Foreground="White" 
+                    FontSize="24" FontWeight="Bold"
+                    Click="Btnretour_Click" Grid.Row="1" Grid.Column="1">
+                ⬅️
+            </Button>
+
+            <Border Grid.Column="3" Grid.RowSpan="3" Background="#FF288AC7">
+                <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White">
+                    SE CONNECTER
+                </TextBlock>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="400*"/>
+                <ColumnDefinition Width="200*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" FontSize="18" FontWeight="Bold" Text="Identifiant:" Margin="0,0,0,5"/>
+                <TextBox x:Name="ID" Grid.Row="1" TextChanged="VerifEtat" FontSize="16" VerticalContentAlignment="Center"/>
+
+                <TextBlock Grid.Row="3" FontSize="18" FontWeight="Bold" Text="Mot de passe:" Margin="0,0,0,5"/>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="270*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="120*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <PasswordBox x:Name="MDP" Grid.Column="0" PasswordChanged="VerifEtat" FontSize="16" VerticalContentAlignment="Center"/>
+                    <TextBox x:Name="txtMDP" Grid.Column="0" Visibility="Collapsed" FontSize="16" VerticalContentAlignment="Center"/>
+
+                    <Button x:Name="Btnvoirmdp" Grid.Column="2" Background="#FF288AC7" Foreground="White" FontWeight="Bold" FontSize="14" Click="Btnvoirmdp_Click">
+                        Voir mdp
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="Btnconnextion" Grid.Column="1" IsEnabled="False"
+                    Background="#FF288AC7" Foreground="White" 
+                    FontSize="26" FontWeight="Bold" 
+                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                    Click="Btnconnextion_Click">
+                Se connecter
+            </Button>
+        </Grid>
+
     </Grid>
 </Page>
