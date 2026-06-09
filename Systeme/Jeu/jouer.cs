@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.ComponentModel;
 using System.ComponentModel;
 using System.Linq;
-using Systeme.Grid;
-using System.ComponentModel;
+using System.Text;
 using System.Windows;
+using Systeme.Grid;
+using Systeme.IA;
+using Systeme.Joueur;
 
 namespace Systeme.Jeu
 {
@@ -28,10 +30,19 @@ namespace Systeme.Jeu
                 set { currentPlayer = value; OnPropertyChanged(nameof(CurrentPlayer)); }
             }
 
+            public bool PartieTerminee { get; private set; }
+            public bool MatchNul { get; private set; }
+            public int? Vainqueur { get; private set; }
+
+            private readonly Para parametres;
+            public bool ModeIA => parametres.Mode == "IA";
+
+            private readonly AlgorithmeIA ia = new AlgorithmeIA(ia: 2, adversaire: 1);
             private GridOption currentOption;
 
-            public GameViewModel(GridViewModel selector)
+            public GameViewModel(GridViewModel selector, Para para)
             {
+                parametres = para;
                 selector.GridChanged += OnGridChanged;
                 OnGridChanged(selector.SelectedGrid);
             }
@@ -41,58 +52,58 @@ namespace Systeme.Jeu
                 currentOption = option;
                 Grille = new Grille(option.Rows, option.Cols);
                 CurrentPlayer = 1;
+                PartieTerminee = false;
+                MatchNul = false;
+                Vainqueur = null;
             }
 
-            public void Reset()
-            {
-                if (currentOption != null)
-                    OnGridChanged(currentOption);
-            }
+            public void Reset() => OnGridChanged(currentOption);
 
-            public bool Play(int column)
+            // Retourne true si victoire
+            public bool Play(int col)
             {
-                if (Grille == null) return false;
+                if (Grille == null || PartieTerminee) return false;
+                if (Grille.PlacerPion(col, CurrentPlayer) == -1) return false;
 
-                for (int y = Grille.Lignes - 1; y >= 0; y--)
+                if (Grille.VerifierVictoire(CurrentPlayer))
                 {
-                    var cell = Grille.GetCell(column, y);
-                    if (cell.Etat == 0)
-                    {
-                        cell.Etat = CurrentPlayer;
-                        if (CheckWin(column, y))
-                            return true; // victoire
-
-                        SwitchPlayer();
-                        return false;
-                    }
+                    Vainqueur = CurrentPlayer; PartieTerminee = true;
+                    OnPropertyChanged(nameof(PartieTerminee));
+                    return true;
                 }
-                return false; // colonne pleine
-            }
-            
-            private void SwitchPlayer() => CurrentPlayer = CurrentPlayer == 1 ? 2 : 1;
-
-            private bool CheckWin(int x, int y)
-                => CheckDirection(x, y, 1, 0)
-                || CheckDirection(x, y, 0, 1)
-                || CheckDirection(x, y, 1, 1)
-                || CheckDirection(x, y, 1, -1);
-
-            private bool CheckDirection(int x, int y, int dx, int dy)
-            {
-                int count = 1 + Count(x, y, dx, dy) + Count(x, y, -dx, -dy);
-                return count >= 4;
-            }
-
-            private int Count(int x, int y, int dx, int dy)
-            {
-                int player = CurrentPlayer, c = 0;
-                x += dx; y += dy;
-                while (x >= 0 && x < Grille.Colonnes && y >= 0 && y < Grille.Lignes)
+                if (Grille.EstPleine())
                 {
-                    if (Grille.GetCell(x, y).Etat == player) { c++; x += dx; y += dy; }
-                    else break;
+                    MatchNul = true; PartieTerminee = true;
+                    OnPropertyChanged(nameof(PartieTerminee));
+                    return false;
                 }
-                return c;
+
+                CurrentPlayer = CurrentPlayer == 1 ? 2 : 1;
+
+                if (ModeIA && CurrentPlayer == 2) JouerIA();
+                return false;
+            }
+
+            public void JouerIA()
+            {
+                if (PartieTerminee) return;
+                int col = ia.ChoisirCoup(Grille);
+                if (col == -1) return;
+                Grille.PlacerPion(col, 2);
+
+                if (Grille.VerifierVictoire(2))
+                {
+                    Vainqueur = 2; PartieTerminee = true;
+                    OnPropertyChanged(nameof(PartieTerminee));
+                    return;
+                }
+                if (Grille.EstPleine())
+                {
+                    MatchNul = true; PartieTerminee = true;
+                    OnPropertyChanged(nameof(PartieTerminee));
+                    return;
+                }
+                CurrentPlayer = 1;
             }
 
             public event PropertyChangedEventHandler PropertyChanged;

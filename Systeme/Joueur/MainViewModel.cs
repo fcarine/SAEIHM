@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Systeme.Grid;
 
 namespace Systeme.Joueur
 {
@@ -9,6 +10,7 @@ namespace Systeme.Joueur
         public Identifiant IdentifiantVM { get; set; }
         public NationaliteViewModel NationaliteVM { get; set; }
         public Para ParaVM { get; set; }
+        public GridViewModel Grid { get; set; }
 
         public MainViewModel()
         {

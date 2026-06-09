@@ -8,43 +8,61 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Puissance4">
 
-    <Grid Background="White">
+    <Grid Background="white">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <!-- Header -->
             <RowDefinition Height="*"/>
-            <!-- Grille centrée -->
             <RowDefinition Height="Auto"/>
-            <!-- Footer VALIDER -->
         </Grid.RowDefinitions>
 
-        <!-- ═══ HEADER : nom joueur + bouton pause ═══ -->
-        <Grid Grid.Row="0" Margin="20,18,20,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-
-            <!-- Bandeau nom joueur (centré visuellement sur toute la largeur) -->
-            <Border Grid.Column="0" Background="#4AADEA" CornerRadius="30"
-                Margin="0,0,12,0" Padding="0,12">
-                <TextBlock x:Name="TbNomCourant"
-                       FontSize="26" FontWeight="Bold"
-                       Foreground="White" HorizontalAlignment="Center"/>
-            </Border>
-
-            
-        </Grid>
-
-        <!-- ═══ GRILLE centrée ═══ -->
-        <Border Grid.Row="1"
-            Background="#E8E8E8" CornerRadius="10"
-            Margin="80,20,80,0"
-            Padding="12">
-            <UniformGrid x:Name="GrilleUI" Rows="6" Columns="7"
-                     HorizontalAlignment="Center"
-                     VerticalAlignment="Center"/>
+        <!-- HEADER : fond bleu, affiche le tour -->
+        <Border Grid.Row="0" Background="#FF288AC7" CornerRadius="8" Margin="10,10,10,5" Padding="8">
+            <TextBlock x:Name="TbJoueur" FontSize="22" FontWeight="Bold" Foreground="White" TextAlignment="Center"/>
         </Border>
 
+        <!-- GRILLE -->
+        <Border Grid.Row="1" Background="#FF288AC7" CornerRadius="8" Margin="10" Padding="6">
+            <ItemsControl x:Name="GrilleUI" Grid.Row="1"
+                      HorizontalAlignment="Center" VerticalAlignment="Center"
+                      Margin="10">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid x:Name="UG"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Width="52" Height="52" Margin="3"
+                            Tag="{Binding X}" Click="Cellule_Click">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Ellipse Fill="White" Stroke="Gray" StrokeThickness="1.5"/>
+                                        <Ellipse x:Name="Pion" Margin="4" Visibility="Collapsed"/>
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                        <DataTrigger Binding="{Binding Etat}" Value="1">
+                                            <Setter TargetName="Pion" Property="Visibility" Value="Visible"/>
+                                            <Setter TargetName="Pion" Property="Fill"       Value="Red"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Etat}" Value="2">
+                                            <Setter TargetName="Pion" Property="Visibility" Value="Visible"/>
+                                            <Setter TargetName="Pion" Property="Fill"       Value="Yellow"/>
+                                        </DataTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Border>
+
+        <!-- FOOTER -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button x:Name="BtnValider" Content="Rejouer" Width="90" Height="32" Margin="5" Click="BtnValider_Click" Background="#FF288AC7" FontSize="18" FontWeight="Bold" Foreground="White"/>
+            <Button x:Name="BtnPause" Content="Pause" Width="90" Height="32" Margin="5" Click="BtnPause_Click" Background="#FF288AC7" FontSize="18" FontWeight="Bold" Foreground="White"/>
+            <Button x:Name="BtnMenu" IsEnabled="False" Content="Menu" Width="100" Height="32" Margin="5" Click="BtnMenu_Click" Background="#FF288AC7" FontSize="18" FontWeight="Bold" Foreground="White"/>
+        </StackPanel>
     </Grid>
 </Page>
