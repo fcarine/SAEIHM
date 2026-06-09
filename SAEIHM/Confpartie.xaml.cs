@@ -24,6 +24,7 @@ namespace SAEIHM
             DataContext = new GridViewModel();
 
         }
+
         private void Btnretour_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Confinterface());

@@ -3,30 +3,25 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
+using Systeme;
+using Systeme.Jeu;
 
 namespace Systeme.Grid
 {
     public class GridViewModel : INotifyPropertyChanged
     {
-        private ObservableCollection<GridOption> collection;
+        public ObservableCollection<GridOption> Collection { get; set; }
 
         public GridViewModel()
         {
-            Collection = new ObservableCollection<GridOption>();
-
-            Collection.Add(new GridOption("6x7", 6, 7));
-            Collection.Add(new GridOption("7x7", 7, 7));
-            Collection.Add(new GridOption("7x8", 7, 8));
-        }
-
-        public ObservableCollection<GridOption> Collection
+            Collection = new ObservableCollection<GridOption>
         {
-            get { return collection; }
-            set
-            {
-                collection = value;
-                OnPropertyChanged(nameof(Collection));
-            }
+            new GridOption("6x7", 6, 7),
+            new GridOption("7x7", 7, 7),
+            new GridOption("7x8", 7, 8)
+        };
+
+            SelectedGrid = Collection[0];
         }
 
         private GridOption selectedGrid;
@@ -37,14 +32,17 @@ namespace Systeme.Grid
             {
                 selectedGrid = value;
                 OnPropertyChanged(nameof(SelectedGrid));
+
+                GridChanged?.Invoke(selectedGrid); 
             }
         }
+        public event Action<GridOption> GridChanged;
 
-        public event PropertyChangedEventHandler? PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void OnPropertyChanged(string propertyName)
+        private void OnPropertyChanged(string name)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
 
