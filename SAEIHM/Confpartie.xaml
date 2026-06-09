@@ -108,6 +108,13 @@
         </Grid>
 
         <Grid Grid.Row="2" Grid.Column="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="50*"/>
+
+            </Grid.RowDefinitions>
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="17*"/>
                 <ColumnDefinition Width="148*"/>
@@ -115,10 +122,10 @@
                 <ColumnDefinition Width="52*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="1" Text="Taille de la grille" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Left" Height="23"/>
-            <ComboBox x:Name="grille" Grid.Column="2" VerticalContentAlignment="Center"
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="Taille de la grille" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Left" Height="23"/>
+            <ComboBox x:Name="grille" Grid.Column="2" Grid.Row="1"  VerticalContentAlignment="Center"
                       ItemsSource="{Binding Collection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                      SelectedItem="{Binding GridVM.SelectedGrid}" DisplayMemberPath="Label" Margin="11,75,0,75"/>
+                      SelectedItem="{Binding GridVM.SelectedGrid}" DisplayMemberPath="Label" />
         </Grid>
 
         <Grid Grid.Row="2" Grid.Column="1">
