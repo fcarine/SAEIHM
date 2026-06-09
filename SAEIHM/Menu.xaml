@@ -10,21 +10,87 @@
 
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Button x:Name="Btnquitter" Margin="17,18,134,93"  Background="red" FontSize="20" FontWeight="Bold" Click="Btnquitter_Click">Quitter</Button>
-        <TextBlock Margin="235,10,235,73" Grid.ColumnSpan="3" FontSize="30" Padding="38,10,0,0" FontWeight="Bold" Background="#FF288AC7" Foreground="White">MENU PRINCIPAL</TextBlock>
-        <Button x:Name="Btnhisto" Margin="57,10,219,47" Grid.Row="1" Grid.Column="0" FontSize="22" Grid.ColumnSpan="2" Background="#FF288AC7" Foreground="White" FontWeight="Bold" Click="Btnhisto_Click">HISTORIQUE DU SCORE</Button>
-        <Button x:Name="Btnaide" Margin="216,10,60,47" Grid.Row="1" Grid.Column="1" FontSize="22" Grid.ColumnSpan="2" Background="#FF288AC7" Foreground="White" FontWeight="Bold" Click="Btnaide_Click">REGLE ET AIDE</Button>
-        <Button x:Name="Btnjouer" Margin="4,144,4,57" Grid.Row="1" Grid.Column="1" FontSize="22" Background="#FF288AC7" Foreground="White" FontWeight="Bold" Grid.RowSpan="2" Click="Btnjouer_Click">JOUER</Button>
-        <Button x:Name="Btnpara" Margin="114,18,37,93"  Background="#FF288AC7" FontSize="20" FontWeight="Bold" Foreground="White" Grid.Column="2" Click="Btnpara_Click">Paramètre</Button>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="150*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="300*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="150*"/>
+                <ColumnDefinition Width="30*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="Btnquitter" Grid.Column="1" 
+             Background="Red" Foreground="White" 
+            FontSize="20" FontWeight="Bold"
+            Click="Btnquitter_Click">
+                Quitter
+            </Button>
+
+            <Border Grid.Column="3" Background="#FF288AC7" >
+                <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White">
+                MENU PRINCIPAL
+                </TextBlock>
+            </Border>
+
+
+            <Button x:Name="Btnpara" Grid.Column="5" 
+             Background="#FF288AC7" Foreground="White" 
+            FontSize="18" FontWeight="Bold"
+            Click="Btnpara_Click">
+                Paramètre
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row="3" Margin="0,0,0,1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="150*"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="150*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="Btnhisto" Grid.Column="1" 
+                     Background="#FF288AC7" Foreground="White" 
+                    FontSize="22" FontWeight="Bold"
+                    Click="Btnhisto_Click">
+                HISTORIQUE DU SCORE
+            </Button>
+
+            <Button x:Name="Btnaide" Grid.Column="3" 
+                    Background="#FF288AC7" Foreground="White" 
+                    FontSize="22" FontWeight="Bold"
+                    Click="Btnaide_Click">
+                REGLE ET AIDE
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="Btnjouer" Grid.Column="1" 
+                    Background="#FF288AC7" Foreground="White" 
+                    FontSize="26" FontWeight="Bold" 
+                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                    Click="Btnjouer_Click">
+                JOUER
+            </Button>
+        </Grid>
 
     </Grid>
 </Page>
