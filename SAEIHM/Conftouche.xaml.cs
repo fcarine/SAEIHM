@@ -42,5 +42,10 @@ namespace SAEIHM
 
             Btnvalide.IsEnabled = modeChoisi;
         }
+
+        private void Btnvalide_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Puissance4());
+        }
     }
 }

@@ -19,6 +19,11 @@
         </Grid.ColumnDefinitions>
         <TextBlock FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="2" Margin="200,10,200,20" TextAlignment="Center" VerticalAlignment="Center" Height="67" Padding="0,10,0,0"/>
 
-
+        <Grid Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <UniformGrid x:Name="GrilleJeu"
+                     Rows="6"
+                     Columns="7"
+                     Margin="20"/>
+        </Grid>
     </Grid>
 </Page>
