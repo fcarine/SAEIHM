@@ -15,39 +15,138 @@
             <RowDefinition Height="181*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="2" Margin="200,10,200,0" TextAlignment="Center" VerticalAlignment="Top" Height="67" Padding="0,10,0,0">CONFIGURER PARTIE</TextBlock>
-        <Button x:Name="Btnretour" Margin="33,19,300,36" FontSize="24" Background="#FF288AC7" Foreground="White" Click="Btnretour_Click">⬅️</Button>
 
-        <StackPanel Margin="33,23,10,87" Grid.Row="1" Orientation="Horizontal">
-            <TextBlock FontSize="18" FontWeight="Bold" Margin="0,0,10,0">Nombre de jetons à aligner</TextBlock>
-            <StackPanel Orientation="Horizontal">
-                <TextBox x:Name="Txtjeton" Width="60" Text="4" IsReadOnly="True" TextAlignment="Center" FontSize="18" FontWeight="Bold"/>
-                <StackPanel>
-                    <Button Content="▲" Width="25" Height="20" Click="BtnAugmenter_Click"/>
-                    <Button Content="▼" Width="25" Height="20" Click="BtnDiminuer_Click"/>
-                </StackPanel>
-            </StackPanel>
-        </StackPanel>
+        <Grid Grid.Row="0" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="15*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="280*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="15*"/>
+            </Grid.ColumnDefinitions>
 
-        <StackPanel Margin="33,23,10,87" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
-            <TextBlock FontSize="18" FontWeight="Bold" Margin="0,0,10,0">Limite de temps par tours</TextBlock>
-            <StackPanel Orientation="Horizontal">
-                <TextBox x:Name="Txttemps" Width="60" Text="30" IsReadOnly="True" TextAlignment="Center" FontSize="18" FontWeight="Bold"/>
-                <StackPanel>
-                    <Button Content="▲" Width="25" Height="20" Click="BtnAugmenter1_Click"/>
-                    <Button Content="▼" Width="25" Height="20" Click="BtnDiminuer1_Click"/>
-                </StackPanel>
-            </StackPanel>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="33,10,53,133" Grid.Row="2">
-            <TextBlock Text="Taille de la grille" Margin="0,0,50,0" FontSize="18" FontWeight="Bold"/>
-            <ComboBox x:Name="grille"  ItemsSource="{Binding Collection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding GridVM.SelectedGrid}" DisplayMemberPath="Label" Width="100"/>
-        </StackPanel>
-        <Button x:Name="Btnvalide" Background="#FF288AC7" FontSize="18" FontWeight="Bold" Grid.Column="1" Margin="212,21,22,36" Click="Btnvalide_Click">Valider</Button>
-        <Button FontSize="18" FontWeight="Bold" Click="Button_Click" Background="#FF288AC7" Margin="63,31,40,90" Grid.Row="2" Grid.Column="1">Réinitialise par défaut</Button>
+            <Button x:Name="Btnretour" 
+                    Background="#FF288AC7" Foreground="White" 
+                    FontSize="24" FontWeight="Bold"
+                    Click="Btnretour_Click" Grid.Row="1" Grid.Column="1">
+                ⬅️
+            </Button>
+
+            <Border Grid.Column="3" Grid.RowSpan="3" Background="#FF288AC7">
+                <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White">
+                    CONFIGURER PARTIE
+                </TextBlock>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="90*"/>
+                <ColumnDefinition Width="30*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="1" FontSize="18" FontWeight="Bold" Text="Nombre de jetons à aligner" VerticalAlignment="Center" TextAlignment="Right"/>
+
+            <Grid Grid.Column="3" VerticalAlignment="Center" Height="35">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="25*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="Txtjeton" Grid.Column="0" Text="4" IsReadOnly="True" TextAlignment="Center" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center"/>
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Content="▲" FontSize="8" Click="BtnAugmenter_Click"/>
+                    <Button Grid.Row="1" Content="▼" FontSize="8" Click="BtnDiminuer_Click"/>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="90*"/>
+                <ColumnDefinition Width="30*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="1" FontSize="18" FontWeight="Bold" Text="Limite de temps par tours" VerticalAlignment="Center" TextAlignment="Right"/>
+
+            <Grid Grid.Column="3" VerticalAlignment="Center" Height="35">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="25*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="Txttemps" Grid.Column="0" Text="30" IsReadOnly="True" TextAlignment="Center" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center"/>
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Content="▲" FontSize="8" Click="BtnAugmenter1_Click"/>
+                    <Button Grid.Row="1" Content="▼" FontSize="8" Click="BtnDiminuer1_Click"/>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="46,0,354,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="33*"/>
+                <ColumnDefinition Width="137*"/>
+                <ColumnDefinition Width="98*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="125*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="1" Text="Taille de la grille" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Right" Height="23"/>
+            <ComboBox x:Name="grille" Grid.Column="2" VerticalContentAlignment="Center"
+                      ItemsSource="{Binding Collection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                      SelectedItem="{Binding GridVM.SelectedGrid}" DisplayMemberPath="Label" Margin="26,74,0,75"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="41*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="250*"/>
+                <ColumnDefinition Width="40*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="1" Grid.Column="1" FontSize="18" FontWeight="Bold" Background="#FF288AC7" Foreground="White"
+                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click">
+                Réinitialise par défaut
+            </Button>
+
+            <Button x:Name="Btnvalide" Grid.Row="3" Grid.Column="1" Background="#FF288AC7" Foreground="White"
+                    FontSize="18" FontWeight="Bold" 
+                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btnvalide_Click">
+                Valider
+            </Button>
+        </Grid>
 
     </Grid>
 </Page>
