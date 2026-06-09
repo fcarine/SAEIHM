@@ -6,7 +6,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using Systeme.Grid;
-using Systeme.Jeu.Systeme.Jeu;
+using Systeme.Jeu;
 using Systeme.Joueur;
 
 namespace SAEIHM

@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Systeme.Joueur;
 
 namespace SAEIHM
 {
@@ -45,7 +46,8 @@ namespace SAEIHM
 
         private void Btnvalide_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Puissance4());
+            var vm = MainViewModel.Instance;
+            NavigationService.Navigate(new Puissance4(vm.ParaVM, vm.Grid));
         }
     }
 }

@@ -9,6 +9,7 @@ namespace Systeme.IA
     {
         private readonly int joueurIA;
         private readonly int joueurAdv;
+        private const int PROFONDEUR = 6; // augmente pour plus de difficulté
 
         public AlgorithmeIA(int ia, int adversaire)
         {
@@ -24,11 +25,11 @@ namespace Systeme.IA
             int meilleureCol = coups[0];
             int meilleurScore = int.MinValue;
 
-            foreach (int col in coups)
+            foreach (int col in OrdonnerCoups(coups, grille.Colonnes))
             {
                 var copie = grille.Clone();
                 copie.PlacerPion(col, joueurIA);
-                int score = Evaluer(copie);
+                int score = Minimax(copie, PROFONDEUR - 1, int.MinValue, int.MaxValue, false);
                 if (score > meilleurScore)
                 {
                     meilleurScore = score;
@@ -38,11 +39,50 @@ namespace Systeme.IA
             return meilleureCol;
         }
 
+        // Joue les colonnes du centre vers les bords (meilleure exploration)
+        private IEnumerable<int> OrdonnerCoups(List<int> coups, int nbCols)
+        {
+            return coups.OrderBy(c => Math.Abs(c - nbCols / 2));
+        }
+
+        private int Minimax(Grille g, int profondeur, int alpha, int beta, bool maximise)
+        {
+            if (g.VerifierVictoire(joueurIA)) return 100000 + profondeur;
+            if (g.VerifierVictoire(joueurAdv)) return -100000 - profondeur;
+            if (g.EstPleine() || profondeur == 0) return Evaluer(g);
+
+            var coups = OrdonnerCoups(g.ColonnesJouables(), g.Colonnes).ToList();
+
+            if (maximise)
+            {
+                int score = int.MinValue;
+                foreach (int col in coups)
+                {
+                    var copie = g.Clone();
+                    copie.PlacerPion(col, joueurIA);
+                    score = Math.Max(score, Minimax(copie, profondeur - 1, alpha, beta, false));
+                    alpha = Math.Max(alpha, score);
+                    if (alpha >= beta) break; // élagage
+                }
+                return score;
+            }
+            else
+            {
+                int score = int.MaxValue;
+                foreach (int col in coups)
+                {
+                    var copie = g.Clone();
+                    copie.PlacerPion(col, joueurAdv);
+                    score = Math.Min(score, Minimax(copie, profondeur - 1, alpha, beta, true));
+                    beta = Math.Min(beta, score);
+                    if (alpha >= beta) break; // élagage
+                }
+                return score;
+            }
+        }
+
         private int Evaluer(Grille g)
         {
-            if (g.VerifierVictoire(joueurIA)) return 100000;
-            if (g.VerifierVictoire(joueurAdv)) return -100000;
-
             int score = 0;
             int centre = g.Colonnes / 2;
 
@@ -81,7 +121,7 @@ namespace Systeme.IA
             if (nbAdv == 4) return -100;
             if (nbIA == 3 && nbVide == 1) return 10;
             if (nbIA == 2 && nbVide == 2) return 2;
-            if (nbAdv == 3 && nbVide == 1) return -15; // bloquer en priorité
+            if (nbAdv == 3 && nbVide == 1) return -15;
             return 0;
         }
     }

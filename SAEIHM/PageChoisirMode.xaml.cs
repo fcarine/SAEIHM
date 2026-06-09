@@ -23,7 +23,7 @@ namespace SAEIHM
         public PageChoisirMode()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
+            DataContext = MainViewModel.Instance;
         }
 
         private void Btnretour_Click(object sender, RoutedEventArgs e)
@@ -36,6 +36,7 @@ namespace SAEIHM
             RadioButton radiobouton = (RadioButton)sender;
             MainViewModel vm = (MainViewModel)this.DataContext;
             Para P = vm.ParaVM;
+            Console.WriteLine($"Sender: {radiobouton.Name}, DataContext: {vm.GetHashCode()}, Para: {P.GetHashCode()}");
 
             if (radiobouton == Btnlocal)
             {
@@ -58,6 +59,7 @@ namespace SAEIHM
                 local.IsEnabled = false;
                 P.Mode = "ligne";
             }
+            Console.WriteLine($"Mode après: {P.Mode}");
         }
 
         private void VerifEtat(object sender, RoutedEventArgs e)
