@@ -20,7 +20,7 @@ namespace SAEIHM
         public Confinterface()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
+            DataContext = MainViewModel.Instance;
         }
         private void Btnretour_Click(object sender, RoutedEventArgs e)
         {
@@ -31,6 +31,7 @@ namespace SAEIHM
             bool forme = rond.IsChecked == true || caree.IsChecked == true || etoile.IsChecked == true;
             bool couleur = rouge.IsChecked == true || bleu.IsChecked == true || rose.IsChecked == true;
             Btnvalide.IsEnabled = couleur && forme;
+            
         }
 
         private void Btnvalide_Click(object sender, RoutedEventArgs e)
@@ -46,9 +47,9 @@ namespace SAEIHM
 
 
             // 1. Vérification des couleurs
-            if (radiobouton == rouge) { P.Couleur1 = "rouge"; P.Couleur2 = "jaune"; return; }
-            if (radiobouton == bleu) { P.Couleur1 = "bleu"; P.Couleur2 = "vert"; return; }
-            if (radiobouton == rose) { P.Couleur1 = "rose"; P.Couleur2 = "noir"; return; }
+            if (radiobouton == rouge) { P.Couleur1 = "red"; P.Couleur2 = "yellow"; return; }
+            if (radiobouton == bleu) { P.Couleur1 = "blue"; P.Couleur2 = "green"; return; }
+            if (radiobouton == rose) { P.Couleur1 = "pink"; P.Couleur2 = "black"; return; }
 
             // 2. Vérification des formes
             if (radiobouton == rond) { P.Forme = "rond"; return; }

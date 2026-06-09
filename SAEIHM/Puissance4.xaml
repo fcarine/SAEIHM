@@ -38,16 +38,14 @@
                                 <ControlTemplate TargetType="Button">
                                     <Grid>
                                         <Ellipse Fill="White" Stroke="Gray" StrokeThickness="1.5"/>
-                                        <Ellipse x:Name="Pion" Margin="4" Visibility="Collapsed"/>
+                                        <Ellipse x:Name="Pion" Margin="4" Fill="{Binding Couleur}" Visibility="Collapsed"/>
                                     </Grid>
                                     <ControlTemplate.Triggers>
                                         <DataTrigger Binding="{Binding Etat}" Value="1">
                                             <Setter TargetName="Pion" Property="Visibility" Value="Visible"/>
-                                            <Setter TargetName="Pion" Property="Fill"       Value="Red"/>
                                         </DataTrigger>
                                         <DataTrigger Binding="{Binding Etat}" Value="2">
                                             <Setter TargetName="Pion" Property="Visibility" Value="Visible"/>
-                                            <Setter TargetName="Pion" Property="Fill"       Value="Yellow"/>
                                         </DataTrigger>
                                     </ControlTemplate.Triggers>
                                 </ControlTemplate>

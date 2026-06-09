@@ -47,7 +47,7 @@ namespace Systeme.Jeu
         private void OnGridChanged(GridOption option)
         {
             currentOption = option;
-            Grille = new Grille(option.Rows, option.Cols);
+            Grille = new Grille(option.Rows, option.Cols, parametres); // ← parametres ajouté
             CurrentPlayer = 1;
             PartieTerminee = false;
             MatchNul = false;
@@ -56,7 +56,6 @@ namespace Systeme.Jeu
 
         public void Reset() => OnGridChanged(currentOption);
 
-        // Retourne true si victoire
         public bool Play(int col)
         {
             if (Grille == null || PartieTerminee) return false;

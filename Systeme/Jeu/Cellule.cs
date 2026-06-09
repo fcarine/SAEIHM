@@ -16,11 +16,16 @@ namespace Systeme.Jeu
             public int X { get; set; }
             public int Y { get; set; }
 
+            public string Couleur1 { get; set; }
+            public string Couleur2 { get; set; }
+
+            public string Couleur => Etat == 1 ? Couleur1 : Etat == 2 ? Couleur2 : "Transparent";
+
             private int etat;
             public int Etat
             {
                 get => etat;
-                set { etat = value; OnPropertyChanged(nameof(Etat)); }
+                set { etat = value; OnPropertyChanged(nameof(Etat)); OnPropertyChanged(nameof(Couleur)); }
             }
 
             public event PropertyChangedEventHandler PropertyChanged;

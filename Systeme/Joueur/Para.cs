@@ -56,8 +56,8 @@ namespace Systeme.Joueur
         {
             Forme = "rond";
             Mode = "";
-            Couleur1 = "Rouge";
-            Couleur2 = "Jaune";
+            Couleur1 = "red";
+            Couleur2 = "yellow";
         }
        
         public event PropertyChangedEventHandler? PropertyChanged;

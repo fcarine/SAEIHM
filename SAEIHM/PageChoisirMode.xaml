@@ -100,9 +100,9 @@
                         <RowDefinition Height="35*"/>
                         <RowDefinition Height="35*"/>
                     </Grid.RowDefinitions>
-                    <RadioButton x:Name="facile" Grid.Row="0" Unchecked="VerifEtat" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center">Facile</RadioButton>
-                    <RadioButton x:Name="moyen" Grid.Row="1" Unchecked="VerifEtat" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center">Moyen</RadioButton>
-                    <RadioButton x:Name="difficile" Grid.Row="2" Unchecked="VerifEtat" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center">Difficile</RadioButton>
+                    <RadioButton x:Name="facile" Grid.Row="0" Checked="VerifEtat" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center">Facile</RadioButton>
+                    <RadioButton x:Name="moyen" Grid.Row="1" Checked="VerifEtat" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center">Moyen</RadioButton>
+                    <RadioButton x:Name="difficile" Grid.Row="2" Checked="VerifEtat" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center">Difficile</RadioButton>
                 </Grid>
             </Grid>
 
