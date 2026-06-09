@@ -72,7 +72,7 @@
             <Viewbox Grid.Column="3" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <StackPanel Width="250">
                     <TextBlock FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20">Formes</TextBlock>
-                    <RadioButton x:Name="rond" Unchecked="VerifEtat" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" Margin="20,10,0,10" Checked="RadioButton_Checked">Rond</RadioButton>
+                    <RadioButton x:Name="rond" Unchecked="VerifEtat" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" Margin="20,0,0,10" Checked="RadioButton_Checked">Rond</RadioButton>
                     <RadioButton x:Name="caree" Unchecked="VerifEtat" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" Margin="20,10,0,10" Checked="RadioButton_Checked">Carée</RadioButton>
                     <RadioButton x:Name="etoile" Unchecked="VerifEtat" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" Margin="20,10,0,10" Checked="RadioButton_Checked">Etoile</RadioButton>
                 </StackPanel>

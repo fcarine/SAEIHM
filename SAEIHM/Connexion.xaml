@@ -65,10 +65,10 @@
                     <RowDefinition Height="35"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" FontSize="18" FontWeight="Bold" Text="Identifiant:" Margin="0,0,0,5"/>
+                <TextBlock Grid.Row="0" FontSize="18" FontWeight="Bold" Text="Identifiant:" />
                 <TextBox x:Name="ID" Grid.Row="1" TextChanged="VerifEtat" FontSize="16" VerticalContentAlignment="Center"/>
 
-                <TextBlock Grid.Row="3" FontSize="18" FontWeight="Bold" Text="Mot de passe:" Margin="0,0,0,5"/>
+                <TextBlock Grid.Row="3" FontSize="18" FontWeight="Bold" Text="Mot de passe:" />
                 <Grid Grid.Row="4">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="270*"/>

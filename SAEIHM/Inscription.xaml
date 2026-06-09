@@ -12,8 +12,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="15*"/>
             <RowDefinition Height="100*"/>
-            <RowDefinition Height="50*"/>
-            <RowDefinition Height="190*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="200*"/>
             <RowDefinition Height="30*"/>
             <RowDefinition Height="80*"/>
             <RowDefinition Height="15*"/>
@@ -64,17 +64,20 @@
                     <RowDefinition Height="35*"/>
                     <RowDefinition Height="25*"/>
                     <RowDefinition Height="35*"/>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="25*"/>
                     <RowDefinition Height="35*"/>
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" FontSize="18" FontWeight="Bold" Text="Identifiant:" VerticalAlignment="Bottom"/>
-                <TextBox x:Name="ID" Grid.Row="1" TextChanged="VerifEtat" FontSize="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,2"/>
+                <TextBox x:Name="ID" Grid.Row="1" TextChanged="VerifEtat" FontSize="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
 
-                <TextBlock Grid.Row="2" FontSize="18" FontWeight="Bold" Text="Pseudo:" VerticalAlignment="Bottom"/>
-                <TextBox x:Name="pseudo" Grid.Row="3" TextChanged="VerifEtat" FontSize="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,2"/>
+                <TextBlock Grid.Row="3" FontSize="18" FontWeight="Bold" Text="Pseudo:" VerticalAlignment="Bottom"/>
+                <TextBox x:Name="pseudo" Grid.Row="4" TextChanged="VerifEtat" FontSize="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
 
-                <TextBlock Grid.Row="4" FontSize="18" FontWeight="Bold" Text="Mot de passe:" VerticalAlignment="Bottom"/>
-                <Grid Grid.Row="5" Margin="0,2">
+                <TextBlock Grid.Row="6" FontSize="18" FontWeight="Bold" Text="Mot de passe:" VerticalAlignment="Bottom"/>
+                <Grid Grid.Row="7" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="350*"/>
                         <ColumnDefinition Width="30*"/>
@@ -90,10 +93,10 @@
                     </Button>
                 </Grid>
 
-                <Grid Grid.Row="6" Margin="0,5">
+                <Grid Grid.Row="9" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="30"/>
                         <ColumnDefinition Width="150"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text="Nationalité" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>

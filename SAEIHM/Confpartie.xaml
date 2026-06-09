@@ -51,11 +51,11 @@
 
         <Grid Grid.Row="1" Grid.Column="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="30*"/>
-                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="180*"/>
                 <ColumnDefinition Width="15*"/>
                 <ColumnDefinition Width="90*"/>
-                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="10*"/>
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="1" FontSize="18" FontWeight="Bold" Text="Nombre de jetons à aligner" VerticalAlignment="Center" TextAlignment="Right"/>
@@ -107,19 +107,18 @@
             </Grid>
         </Grid>
 
-        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="46,0,354,0">
+        <Grid Grid.Row="2" Grid.Column="0" >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="33*"/>
-                <ColumnDefinition Width="137*"/>
-                <ColumnDefinition Width="98*"/>
-                <ColumnDefinition Width="7*"/>
-                <ColumnDefinition Width="125*"/>
+                <ColumnDefinition Width="17*"/>
+                <ColumnDefinition Width="148*"/>
+                <ColumnDefinition Width="183*"/>
+                <ColumnDefinition Width="52*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="1" Text="Taille de la grille" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Right" Height="23"/>
+            <TextBlock Grid.Column="1" Text="Taille de la grille" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Left" Height="23"/>
             <ComboBox x:Name="grille" Grid.Column="2" VerticalContentAlignment="Center"
                       ItemsSource="{Binding Collection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                      SelectedItem="{Binding GridVM.SelectedGrid}" DisplayMemberPath="Label" Margin="26,74,0,75"/>
+                      SelectedItem="{Binding GridVM.SelectedGrid}" DisplayMemberPath="Label" Margin="11,75,0,75"/>
         </Grid>
 
         <Grid Grid.Row="2" Grid.Column="1">

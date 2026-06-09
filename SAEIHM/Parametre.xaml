@@ -76,7 +76,7 @@
 
                     <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
                         <TextBox x:Name="TxtFontSize" Width="60" Height="30" Text="18" IsReadOnly="True" TextAlignment="Center" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center"/>
-                        <StackPanel Margin="5,0,0,0">
+                        <StackPanel >
                             <Button Content="▲" Width="25" Height="15" Click="BtnAugmenter_Click" FontSize="10"/>
                             <Button Content="▼" Width="25" Height="15" Click="BtnDiminuer_Click" FontSize="10"/>
                         </StackPanel>
@@ -90,7 +90,7 @@
                                         <ControlTemplate TargetType="ToggleButton">
                                             <Grid>
                                                 <Border x:Name="SwitchBorder" CornerRadius="15" Background="Red"/>
-                                                <Ellipse x:Name="SwitchKnob" Width="26" Height="26" Fill="White" HorizontalAlignment="Left" Margin="2"/>
+                                                <Ellipse x:Name="SwitchKnob" Width="26" Height="26" Fill="White" HorizontalAlignment="Left" />
                                             </Grid>
                                             <ControlTemplate.Triggers>
                                                 <Trigger Property="IsChecked" Value="True">
@@ -113,7 +113,7 @@
                                         <ControlTemplate TargetType="ToggleButton">
                                             <Grid>
                                                 <Border x:Name="SwitchBorder" CornerRadius="15" Background="Red"/>
-                                                <Ellipse x:Name="SwitchKnob" Width="26" Height="26" Fill="White" HorizontalAlignment="Left" Margin="2"/>
+                                                <Ellipse x:Name="SwitchKnob" Width="26" Height="26" Fill="White" HorizontalAlignment="Left" />
                                             </Grid>
                                             <ControlTemplate.Triggers>
                                                 <Trigger Property="IsChecked" Value="True">
