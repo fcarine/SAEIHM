@@ -10,35 +10,115 @@
 
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="11*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="190*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <TextBlock FontSize="30"  FontWeight="Bold" Background="#FF288AC7" Foreground="White" Grid.ColumnSpan="2" Margin="200,10,200,20" TextAlignment="Center" VerticalAlignment="Center" Padding="0,10,0,0" Height="67">S'INSCRIRE</TextBlock>
-        <Button x:Name="Btnretour" Margin="33,19,300,36" FontSize="24" Background="#FF288AC7" Foreground="White" Click="Btnretour_Click">⬅️</Button>
 
-        <StackPanel Grid.ColumnSpan="2" Margin="200,10,200,109" Grid.Row="1">
-            <TextBlock FontSize="18" FontWeight="Bold">Identifiant:</TextBlock>
-            <TextBox x:Name="ID" TextChanged="VerifEtat"/>
-            <TextBlock FontSize="18" FontWeight="Bold" Margin="0,10,0,0">Pseudo:</TextBlock>
-            <TextBox x:Name="pseudo" TextChanged="VerifEtat"/>
-            <TextBlock FontSize="18" FontWeight="Bold" Margin="0,10,0,0">Mot de passe:</TextBlock>
-            <PasswordBox x:Name="MDP" PasswordChanged="VerifEtat"/>
-            <TextBox x:Name="txtMDP" Visibility="Collapsed"/>
-            <Button x:Name="Btnvoirmdp" Background="#FF288AC7" Margin="300,5,10,0" Click="Btnvoirmdp_Click">Voir mdp</Button>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="15*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="280*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="15*"/>
+            </Grid.ColumnDefinitions>
 
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Nationalité" Margin="0,0,145,0" FontSize="18" FontWeight="Bold"/>
-                <ComboBox x:Name="nationalite"  ItemsSource="{Binding NationaliteVM.Collection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Pays" Width="150"/>
-            </StackPanel>
+            <Button x:Name="Btnretour" 
+                    Background="#FF288AC7" Foreground="White" 
+                    FontSize="24" FontWeight="Bold"
+                    Click="Btnretour_Click" Grid.Row="1" Grid.Column="1">
+                ⬅️
+            </Button>
 
-        
-        </StackPanel>
+            <Border Grid.Column="3" Grid.RowSpan="3" Background="#FF288AC7">
+                <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White">
+                    S'INSCRIRE
+                </TextBlock>
+            </Border>
+        </Grid>
 
-        <Button x:Name="Btninscrire" Grid.ColumnSpan="2" Margin="234,270,234,10" Grid.Row="1" FontSize="18" FontWeight="Bold" Background="#FF288AC7" IsEnabled="False" Click="Btninscrire_Click" >S'inscrire</Button>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150*"/>
+                <ColumnDefinition Width="500*"/>
+                <ColumnDefinition Width="150*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="35*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" FontSize="18" FontWeight="Bold" Text="Identifiant:" VerticalAlignment="Bottom"/>
+                <TextBox x:Name="ID" Grid.Row="1" TextChanged="VerifEtat" FontSize="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,2"/>
+
+                <TextBlock Grid.Row="2" FontSize="18" FontWeight="Bold" Text="Pseudo:" VerticalAlignment="Bottom"/>
+                <TextBox x:Name="pseudo" Grid.Row="3" TextChanged="VerifEtat" FontSize="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,2"/>
+
+                <TextBlock Grid.Row="4" FontSize="18" FontWeight="Bold" Text="Mot de passe:" VerticalAlignment="Bottom"/>
+                <Grid Grid.Row="5" Margin="0,2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="350*"/>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="120*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <PasswordBox x:Name="MDP" Grid.Column="0" PasswordChanged="VerifEtat" FontSize="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                    <TextBox x:Name="txtMDP" Grid.Column="0" Visibility="Collapsed" FontSize="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+
+                    <Button x:Name="Btnvoirmdp" Grid.Column="2" Background="#FF288AC7" Foreground="White" FontSize="14" FontWeight="Bold"
+                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btnvoirmdp_Click">
+                        Voir mdp
+                    </Button>
+                </Grid>
+
+                <Grid Grid.Row="6" Margin="0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="150"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Nationalité" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="nationalite" Grid.Column="2" Height="30" VerticalAlignment="Center"
+                              ItemsSource="{Binding NationaliteVM.Collection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                              DisplayMemberPath="Pays"/>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="Btninscrire" Grid.Column="1" 
+                    Background="#FF288AC7" Foreground="White" 
+                    FontSize="26" FontWeight="Bold" IsEnabled="False"
+                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                    Click="Btninscrire_Click">
+                S'inscrire
+            </Button>
+        </Grid>
 
     </Grid>
 </Page>
