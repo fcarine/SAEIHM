@@ -54,10 +54,10 @@ namespace Systeme.Joueur
 
         public Para()
         {
-            Forme = "";
+            Forme = "rond";
             Mode = "";
-            Couleur1 = "";
-            Couleur2 = "";
+            Couleur1 = "Rouge";
+            Couleur2 = "Jaune";
         }
        
         public event PropertyChangedEventHandler? PropertyChanged;
